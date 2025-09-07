@@ -13,6 +13,7 @@ void draw() {
   
   for (int i = 0; i < numRows; i++) {
   line(0, i * cellSize, width, i * cellSize); }
+  
   for (int i = 0; i < numCols; i++) {
     line(i * cellSize, 0, i * cellSize, height);}
 }
