@@ -11,7 +11,7 @@
 // I want to use this code to turn into a for loop 
 // to be able to have an Iteration instead of having extra lines of code...
 // 
-// In my option i think that it should have around 4 loops 
+// In my option I think that it should have around 4 loops 
 // to iterate each axis out of the 4 coordinates...
 // 
 // I should read more books about java or 
