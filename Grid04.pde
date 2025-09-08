@@ -5,8 +5,8 @@ void setup()
 }
 
 void draw() {
-  int numRows = 50; // Warning for safety do not go above 50 pixels for each 
-  int numCols = 50; // Row and column it affects the eye sight of the user
+  int numRows = 1; // Warning for safety do not go above 50 pixels for each 
+  int numCols = 1; // Row and column it affects the eye sight of the user
   
   float cellSize =  width / numCols;
   
