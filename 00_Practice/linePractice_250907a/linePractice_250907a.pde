@@ -9,7 +9,6 @@ void draw()
 {
   int numRows = 2;
   int numCols = 2;
-  int numZine = 2;
   float cellSize = width / numCols;
   for(int i=0; i<numZine; i++)
   {
