@@ -5,11 +5,10 @@ void setup()
 }
 
 void draw() {
-  int numRows = 1; // Warning for safety do not go above 50 pixels for each 
-  int numCols = 1; // Row and column it affects the eye sight of the user
+  int numRows = 30; // Warning for safety do not go above 50 pixels for each 
+  int numCols = 30; // Row and column it affects the eye sight of the user
   
-  float cellSize =  width / numCols; // Square in between both axis per column
-  System.out.println("CellSize number of Columns: " + cellSize); // Check for CellSize
+  float cellSize =  width / numCols; // dividing columns by width to have a more accurate result
   
   stroke(0); // Set line color to black 
   
@@ -17,4 +16,6 @@ void draw() {
     line(0, i * cellSize, width, i * cellSize); } // 4 equations instead of coordinates for the rows to be display horizontally
   for (int i = 0; i < numCols; i++) {  // Same equation as above
     line(i * cellSize, 0, i * cellSize, height);} // Opposite to the one above
+    System.out.println("CellSize number of Columns: " + cellSize); // Check for CellSize are now 13 based on the indentation of the for loop
+    
 }
