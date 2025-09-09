@@ -20,12 +20,14 @@ void draw()
   
   float cellSize = width / numCols; 
  
-  for(int i=0; i<numKano; i++) 
-  { 
+  for(int i=0; i<numKano; i++) // For loops is essential for describing 
+                               // to the PC what you want out of the code 
+  {
     stroke(0);
     line(700, i / numKano, 0, 700); 
   }
-  for(int i=0;i<numZine; i++) {
+  for(int i=0;i<numZine; i++) 
+  {
     stroke(0);
     
     // line function coordination in my own words explaing it's possitions
@@ -39,11 +41,14 @@ void draw()
   for(int i=0; i<numRows; i++)
   {
     stroke(0);
-    line(0, i * cellSize, width, i * cellSize);
+    line(0, i * cellSize, width, i * cellSize); // line can also take a 
+                                                // specific shape or form
+                                                // based on the operation
   }
   for(int i=0; i<numCols; i++) 
   {
-    stroke(0);
+    stroke(0);                                  // stroke is the thickness of 
+                                                // the line before is written
     line(i * cellSize, 0, i * cellSize, height);
   }
   
