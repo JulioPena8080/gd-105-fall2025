@@ -1,12 +1,15 @@
 
 
-// A method first to set the size of the canvas
+// First a method to set the size of the canvas
+
 void setup()
 {
   size(700, 700);
   background(125);
 }
 
+
+// A second method to define each variable and it's conditions
 void draw()
 {
   
@@ -24,8 +27,15 @@ void draw()
   }
   for(int i=0;i<numZine; i++) {
     stroke(0);
-    // left    right
+    
+    // line function coordination in my own words explaing it's possitions
+    // is very simple once you see from these comments below |
+    // left    right   //same here                       ____|
+    
+    
     line(0, i / numZine, 700, 700);} 
+    // its more difficult to see it without the comments
+    
   for(int i=0; i<numRows; i++)
   {
     stroke(0);
