@@ -1,4 +1,5 @@
 
+
 // A method first to set the size of the canvas
 void setup()
 {
@@ -8,12 +9,19 @@ void setup()
 
 void draw()
 {
-  int numRows = 2;
-  int numCols = 2;
-  int numZine = 2;
+  
+  int numRows = 10;
+  int numCols = 10;
+  int numZine = 10;
+  int numKano = 10;
   
   float cellSize = width / numCols; 
   
+  for(int i=0; i<numKano; i++) 
+  {
+    stroke(1);
+    line(700, 700, i / numKano, 0); // line not displaying not sure why
+  }
   for(int i=0;i<numZine; i++) {
     stroke(1);
     // left    right
