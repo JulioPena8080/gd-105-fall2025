@@ -20,7 +20,7 @@ void draw()
   for(int i=0; i<numKano; i++) 
   {
     stroke(1);
-    line(700, 700, i / numKano, 0); // line not displaying not sure why
+    line(700, i / numKano, 0, 700); 
   }
   for(int i=0;i<numZine; i++) {
     stroke(1);
