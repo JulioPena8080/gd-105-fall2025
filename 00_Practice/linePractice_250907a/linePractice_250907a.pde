@@ -5,7 +5,7 @@
 void setup()
 {
   size(700, 700);
-  background(125);
+  background(125); // Color grey in background
 }
 
 
