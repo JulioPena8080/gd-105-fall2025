@@ -19,10 +19,11 @@ void draw()
   int numZine = 10;
   int numKano = 10;
   
-  textMode(CENTER);
-  text("Integers", 450, 450);
+  textMode(CENTER); // line does not have syntax error but it dont center 
+  text("Integers", 450, 450); // display text in the canvas with coordinates
+  
   int Integers = 10;
-  int[] units = {0,1,2,3,4,5,6,7,8,9,10};
+  int[] units = {0,1,2,3,4,5,6,7,8,9,10}; // integer array for digit display in grind
   
   // floating decimals from the width divided by columns
   float cellSize = width / numCols; 
