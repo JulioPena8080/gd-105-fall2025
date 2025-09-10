@@ -1,6 +1,8 @@
 
 
 // First a method to set the size and the background of the canvas 
+// make a main brach again!!!
+// 00_ for 01_plot !!!
 
 void setup()
 {
@@ -19,17 +21,33 @@ void draw()
   int numZine = 10;
   int numKano = 10;
   
-  
+  // shapes, stroke and fills with some text around it
+  fill(255, 255, 255);
   textMode(CENTER); // line does not have syntax error but it dont center 
   text("DEBUG ARRAY FOR DIGITS PER COLUMN", 150, 50); // display text in the canvas with coordinates
   
   int[] unit = {0,1,2,3,4,5,6,7,8,9,10}; // integer array for digit display in grind
+  
+
+  
   text("0", 24, 15);
   text("1", 72, 15);
   text("2", 144, 15);
   text("3", 216, 15);
   text("4", 288, 15); // had to go back to the basic to remember how I got here 
   
+  // 
+  stroke(0);
+  fill(225, 128, 0);
+  triangle(200, 300, 400, 50, 60, 70); // takes 6 parameters
+  
+  stroke(2);
+  fill(225, 0, 0);
+  circle(600, 300, 200); // takes 3 parameters
+  
+  stroke(1);
+  fill(0, 0, 255);
+  square(400, 500, 100); // takes 3 parameters
   
   // floating decimals from the width divided by columns
   float cellSize = width / numCols; 
