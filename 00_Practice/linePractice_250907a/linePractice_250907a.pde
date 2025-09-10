@@ -32,6 +32,11 @@ void draw()
                        // loop to mark each column with a digit 4
                        // to be able to measure
   {
+    
+    System.out.println(arr); // the array is not the problem 
+                  // add  "units" instead of "arr" look at the terminal
+                  // i dont know what it is but i know the code is good 
+                  
     text(arr, numCols, 30);
     // the parameters cannot be a coordinate to be able to replicate
     // I need some help for this part
