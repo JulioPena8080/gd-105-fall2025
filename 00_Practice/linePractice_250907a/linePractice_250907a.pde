@@ -12,17 +12,29 @@ void setup()
 // A second method to define each variable and it's conditions
 void draw()
 {
-  textMode(CENTER);
-  text("Name", 450, 450);
   
-// Integers defined
+  // Integers defined
   int numRows = 10;
   int numCols = 10;
   int numZine = 10;
   int numKano = 10;
   
+  textMode(CENTER);
+  text("Integers", 450, 450);
+  int Integers = 10;
+  int[] units = {0,1,2,3,4,5,6,7,8,9,10};
+  
   // floating decimals from the width divided by columns
   float cellSize = width / numCols; 
+  
+  for(int arr : units) // trying to use foreach 
+                       // loop to mark each column with a digit 4
+                       // to be able to measure
+  {
+    text(arr, numCols, 30);
+    
+      
+  }
  
   for(int i=0; i<numKano; i++) // For loops is essential for describing 
                                // to the PC what you want out of the code 
