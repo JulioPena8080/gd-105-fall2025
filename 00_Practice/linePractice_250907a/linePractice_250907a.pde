@@ -1,8 +1,7 @@
 
-
 // First a method to set the size and the background of the canvas 
 // make a main brach again!!!
-// 00_ for 01_plot !!!
+// 00_Practice for 01_plot !!!
 
 void setup()
 {
