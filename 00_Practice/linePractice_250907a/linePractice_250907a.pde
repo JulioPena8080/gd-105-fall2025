@@ -1,6 +1,6 @@
 
 
-// First a method to set the size of the canvas
+// First a method to set the size and the background of the canvas 
 
 void setup()
 {
@@ -12,12 +12,13 @@ void setup()
 // A second method to define each variable and it's conditions
 void draw()
 {
-  
+// Integers defined
   int numRows = 10;
   int numCols = 10;
   int numZine = 10;
   int numKano = 10;
   
+  // floating decimals from the width divided by columns
   float cellSize = width / numCols; 
  
   for(int i=0; i<numKano; i++) // For loops is essential for describing 
