@@ -12,6 +12,9 @@ void setup()
 // A second method to define each variable and it's conditions
 void draw()
 {
+  textMode(CENTER);
+  text("Name", 450, 450);
+  
 // Integers defined
   int numRows = 10;
   int numCols = 10;
@@ -31,9 +34,15 @@ void draw()
   {
     stroke(0);
     
+    // Google AI mode example:
+    // (x1, y1): Coordinates of the starting point of the line
+    // (x2, y2): Coordinates of the ending point of the line
+    
+    // My example:
     // line function coordination in my own words explaing it's possitions
     // is very simple once you see from these comments below |
-    // left    right   //same here                       ____|
+    // left    right   //left right                      ____|
+    // 
     
     
     line(0, i / numZine, 700, 700);} 
