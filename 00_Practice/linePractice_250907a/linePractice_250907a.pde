@@ -32,6 +32,8 @@ void draw()
                        // to be able to measure
   {
     text(arr, numCols, 30);
+    // the parameters cannot be a coordinate to be able to replicate
+    // I need some help for this part
     
       
   }
