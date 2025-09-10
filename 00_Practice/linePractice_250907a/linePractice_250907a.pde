@@ -19,24 +19,31 @@ void draw()
   int numZine = 10;
   int numKano = 10;
   
+  float columns = 0.0;
+  
   textMode(CENTER); // line does not have syntax error but it dont center 
-  text("Integers", 450, 450); // display text in the canvas with coordinates
+  text("DEBUG ARRAY FOR DIGITS PER COLUMN", 150, 50); // display text in the canvas with coordinates
   
   int Integers = 10;
-  int[] units = {0,1,2,3,4,5,6,7,8,9,10}; // integer array for digit display in grind
+  int[] unit = {0,1,2,3,4,5,6,7,8,9,10}; // integer array for digit display in grind
   
   // floating decimals from the width divided by columns
   float cellSize = width / numCols; 
   
-  for(int arr : units) // trying to use foreach 
+  for(int arr : unit) // trying to use foreach 
                        // loop to mark each column with a digit 4
                        // to be able to measure
+                       
   {
     
-    System.out.println(arr); // the array is not the problem 
+    //System.out.println(arr); // the array is not the problem 
                   // add  "units" instead of "arr" look at the terminal
                   // i dont know what it is but i know the code is good 
-                  
+                  columns = numCols;
+                  for(float cols : unit) 
+                  {
+                    text(cols, numRows, numCols);
+                  }
     text(arr, numCols, 30);
     // the parameters cannot be a coordinate to be able to replicate
     // I need some help for this part
