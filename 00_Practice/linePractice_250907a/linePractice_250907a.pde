@@ -48,7 +48,7 @@ void draw()
   }
   for(int i=0; i<numCols; i++) 
   {
-    stroke(0);                                  // stroke is the thickness of 
+    stroke(0);                                  // stroke is the depth of 
                                                 // the line before is written
     line(i * cellSize, 0, i * cellSize, height);
   }
