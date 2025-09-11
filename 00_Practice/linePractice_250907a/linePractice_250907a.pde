@@ -1,55 +1,59 @@
 
 // First a method to set the size and the background of the canvas 
-// make a main brach again!!!
-// 00_Practice for 01_plot !!!
 
 void setup()
 {
   size(700, 700);
-  background(125); // Color grey in background
+  background(70, 150, 60); // Color grey in background
 }
 
 
 // A second method to define each variable and it's conditions
 void draw()
 {
+  //scale(0.7); // Scaling is to see beyond grid
+  //translate(300, 150); // translating for centering 
   
-  // Integers defined
+  // Integers defined for the grid
   int numRows = 10;
   int numCols = 10;
   int numZine = 10;
   int numKano = 10;
   
+  int[] unit = {0,1,2,3,4,5,6,7,8,9,10}; // Integer array for digit display in grind
+
+  
   // shapes, stroke and fills with some text around it
   fill(255, 255, 255);
   textMode(CENTER); // line does not have syntax error but it dont center 
-  text("DEBUG ARRAY FOR DIGITS PER COLUMN", 150, 50); // display text in the canvas with coordinates
-  
-  int[] unit = {0,1,2,3,4,5,6,7,8,9,10}; // integer array for digit display in grind
-  
-
-  
+  text("DEBUG ARRAY FOR DIGITS PER COLUMN", 50, 50); // display text in the canvas with coordinates 
+  textSize(20);
   text("0", 24, 15);
   text("1", 72, 15);
   text("2", 144, 15);
   text("3", 216, 15);
-  text("4", 288, 15); // had to go back to the basic to remember how I got here 
-  
-  // 
-  stroke(0);
-  fill(225, 128, 0);
-  triangle(200, 300, 400, 50, 60, 70); // takes 6 parameters
-  
-  stroke(2);
-  fill(225, 0, 0);
-  circle(600, 300, 200); // takes 3 parameters
-  
-  stroke(1);
-  fill(0, 0, 255);
-  square(400, 500, 100); // takes 3 parameters
+  text("4", 288, 15); // had to go back to the basic to remember how I got here
   
   // floating decimals from the width divided by columns
   float cellSize = width / numCols; 
+  
+  int shape = 1; // to replicate shapes with a for loop
+  
+  for(int i=0; i<shape; i++) // for loops are eazy to get the hang of it
+  {
+    stroke(0);
+    fill(225, 128, 0);
+    triangle(200, 300, 400, 50, 60, 70); // takes 6 parameters
+    
+    stroke(2);
+    fill(225, 0, 0);
+    circle(600, 300, 200); // takes 3 parameters
+    
+    stroke(1);
+    fill(0, 0, 255);
+    // rotate(190); // Rotation for 190 degrees
+    square(400, 500, 100); // takes 3 parameters 
+  }
   
   for(int arr : unit) // trying to use foreach 
                        // loop to mark each column with a digit 4
@@ -58,11 +62,11 @@ void draw()
                        
   {
     
-    //System.out.println(arr); // the array is not the problem 
+    //System.out.println(arr); // the array is not the problem // DS
                   // add  "units" instead of "arr" look at the terminal
                   // i dont know what it is but i know the code is good 
                   
-                  for(float cols : unit) 
+                  for(int cols : unit) 
                   {
                     text(cols, numRows, numCols);
                   }
@@ -77,12 +81,13 @@ void draw()
   for(int i=0; i<numKano; i++) // For loops is essential for describing 
                                // to the PC what you want out of the code 
   {
-    stroke(0);
+    stroke(255, 10); 
+    
     line(700, i / numKano, 0, 700); 
   }
   for(int i=0;i<numZine; i++) 
   {
-    stroke(0);
+    stroke(255, 2);
     
     // Google AI mode example:
     // (x1, y1): Coordinates of the starting point of the line
@@ -105,11 +110,12 @@ void draw()
                                                 // specific shape or form
                                                 // based on the operation
   }
-  for(int i=0; i<numCols; i++) 
-  {
+  for(int i=-3; i<numCols; i++) 
+  {  // negative 3 to draw the missing lines outside "canvas size"  
+     // lines that cannot be displayed but they there
     stroke(0);                                  // stroke is the depth of 
-                                                // the line before is written
-    line(i * cellSize, 0, i * cellSize, height);
-  }
+                                                // the line before is draw
+    line(i * cellSize, 0, i * cellSize * 1, height);
+  }                             // times one works
   
 }
