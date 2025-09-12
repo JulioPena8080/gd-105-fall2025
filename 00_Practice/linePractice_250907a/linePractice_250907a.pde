@@ -11,8 +11,13 @@ void setup()
 // A second method to define each variable and it's conditions
 void draw()
 {
-  //scale(0.7); // Scaling is to see beyond grid
+  scale(0.7); // Scaling is to see beyond grid
   //translate(300, 150); // translating for centering 
+  fill(255, 60);
+  textSize(28);
+  text("Rule 1: pick a color", 700, 40);
+  text("Rule 2: pick a shape", 700, 80);
+  text("Goal: 1 square or number", 700, 120);
   
   // Integers defined for the grid
   int numRows = 10;
@@ -26,8 +31,8 @@ void draw()
   fill(255, 255, 255);
   textMode(CENTER); // line does not have syntax error but it dont center 
   textSize(60);
-  text("GAME GRIDS", 20, 350); // display text in the canvas with coordinates 
-  textSize(20);
+  text(" G   A  M   E             GRIDS", 20, 350); // display text in the canvas with coordinates 
+  textSize(20); 
   text("0", 24, 15);
   text("1", 72, 15);
   text("2", 144, 15);
@@ -55,6 +60,7 @@ void draw()
     square(400, 500, 100); // takes 3 parameters 
   }
   
+  
   for(int arr : unit)  // trying to use foreach 
                        // loop to mark each column with a digit 
                        // to be able to measure        
@@ -64,7 +70,13 @@ void draw()
                   // add  "units" instead of "arr" look at the terminal
                   // i dont know what it is but i know the code is good 
                   // maybe is the bytes of these equations encrypted
-    text(arr, numCols, 30);
+    textSize(40);
+    fill(0,0,0);
+    text("0", 5, 48);
+    text("1", 5, 100);
+    text("2", 5, 170);
+    text("3", 5, 240);
+    text("4", 5, 308);
     // the parameters cannot be a coordinate to be able to replicate
     // I need some help for this part
   }
