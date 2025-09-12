@@ -19,7 +19,6 @@ void draw()
   int numCols = 10;
   int numZine = 10;
   int numKano = 10;
-  
   int[] unit = {0,1,2,3,4,5,6,7,8,9,10}; // Integer array for digit display in grind
 
   
@@ -27,7 +26,7 @@ void draw()
   fill(255, 255, 255);
   textMode(CENTER); // line does not have syntax error but it dont center 
   textSize(60);
-  text("Sliknok", 50, 350); // display text in the canvas with coordinates 
+  text("GAME GRIDS", 20, 350); // display text in the canvas with coordinates 
   textSize(20);
   text("0", 24, 15);
   text("1", 72, 15);
@@ -47,7 +46,7 @@ void draw()
     triangle(200, 300, 400, 50, 60, 70); // takes 6 parameters
     
     stroke(2);
-    fill(225, 0, 0);
+    fill(225, 0, 0, 40);
     circle(600, 300, 200); // takes 3 parameters
     
     stroke(1);
@@ -89,9 +88,6 @@ void draw()
     // line function coordination in my own words explaing it's possitions
     // is very simple once you see from these comments below |
     // left    right   //left right                      ____|
-    // 
-    
-    
     line(0, i / numZine, 700, 700);} 
     // its more difficult to see it without the comments
     
