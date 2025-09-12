@@ -90,7 +90,7 @@ void draw()
   }
   for(int i=0;i<numZine; i++) 
   {
-    stroke(255, 2);
+    stroke(255, 20);
     
     // Google AI mode example:
     // (x1, y1): Coordinates of the starting point of the line
@@ -110,12 +110,12 @@ void draw()
                                                 // specific shape or form
                                                 // based on the operation
   }
-  for(int i=-3; i<numCols; i++) 
+  for(int i=0; i<numCols; i++) 
   {  // negative 3 to draw the missing lines outside "canvas size"  
      // lines that cannot be displayed but they there
     stroke(0);                                  // stroke is the depth of 
                                                 // the line before is draw
-    line(i * cellSize, 0, i * cellSize * 1, height);
+    line(i * cellSize, 0, i * cellSize, height);
   }                             // times one works
   
 }
