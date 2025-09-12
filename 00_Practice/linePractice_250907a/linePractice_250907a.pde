@@ -56,7 +56,7 @@ void draw()
     square(400, 500, 100); // takes 3 parameters 
   }
   
-  for(int arr : unit) // trying to use foreach 
+  for(int arr : unit)  // trying to use foreach 
                        // loop to mark each column with a digit 
                        // to be able to measure        
   {
