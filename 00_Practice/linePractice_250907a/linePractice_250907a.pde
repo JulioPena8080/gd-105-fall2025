@@ -26,7 +26,8 @@ void draw()
   // shapes, stroke and fills with some text around it
   fill(255, 255, 255);
   textMode(CENTER); // line does not have syntax error but it dont center 
-  text("DEBUG ARRAY FOR DIGITS PER COLUMN", 50, 50); // display text in the canvas with coordinates 
+  textSize(60);
+  text("Sliknok", 50, 350); // display text in the canvas with coordinates 
   textSize(20);
   text("0", 24, 15);
   text("1", 72, 15);
@@ -56,26 +57,17 @@ void draw()
   }
   
   for(int arr : unit) // trying to use foreach 
-                       // loop to mark each column with a digit 4
-                       // to be able to measure
-                       
-                       
+                       // loop to mark each column with a digit 
+                       // to be able to measure        
   {
-    
-    //System.out.println(arr); // the array is not the problem // DS
+    //System.out.println(arr); // the array is not the problem 
+   // Degub Section //
                   // add  "units" instead of "arr" look at the terminal
                   // i dont know what it is but i know the code is good 
-                  
-                  for(int cols : unit) 
-                  {
-                    text(cols, numRows, numCols);
-                  }
-
+                  // maybe is the bytes of these equations encrypted
     text(arr, numCols, 30);
     // the parameters cannot be a coordinate to be able to replicate
     // I need some help for this part
-    
-      
   }
  
   for(int i=0; i<numKano; i++) // For loops is essential for describing 
