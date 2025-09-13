@@ -10,8 +10,8 @@ void setup()
 // A second method to define each variable and it's conditions
 void draw()
 {
-  scale(0.1); // Scaling is to see beyond grid
-  translate(300, 150); // translating for centering 
+  scale(0.8); // Scaling is to see beyond grid
+  //translate(300, 150); // translating for centering 
   fill(255, 60);
   
   // Integers defined for the grid
@@ -29,7 +29,7 @@ void draw()
   {
     stroke(255, 10); 
     
-    line(700, i / numKano, 0, 700); 
+    //line(700, i / numKano, 0, 700); 
   }
   for(int i=0; i<numZine; i++) 
   {
@@ -43,13 +43,13 @@ void draw()
     // line function coordination in my own words explaing it's possitions
     // is very simple once you see from these comments below |
     // left    right   //left right                      ____|
-    line(0, i / numZine, 700, 700);} 
+    //line(0, i / numZine, 700, 700); 
     // its more difficult to see it without the comments
-    
+  }
   for(int i=0; i<numRows; i++)
   {
     stroke(0);
-    line(0, i * cellSize, width, i * cellSize); // line can also take a 
+    //line(0, i * cellSize, width, i * cellSize); // line can also take a 
                                                 // specific shape or form
                                                 // based on the operation
   }
@@ -58,26 +58,26 @@ void draw()
      // lines that cannot be displayed but they there
     stroke(0);                                  // stroke is the depth of 
                                                 // the line before is draw
-    line(i * cellSize, 0, i * cellSize, height);
+   // line(i * cellSize, 0, i * cellSize * 2, height);
   }                             // times one works
   for(int i=0; i<cellSizeX; i++)
   {  
     stroke(0);
-    line(i * cellSize, 0, i * cellSize , height);
+    line(i / cellSize * -30000, 0, i * cellSize, height);
   }
   for(int i=0; i<numCols; i++)
   {
     numKano = 50;
     stroke(0);
-    line(i * cellSizeX, 0 , i * cellSize, height);
-    line(700, i * cellSize, height, i * cellSizeX);
+    //line(i * cellSizeX, 0 , i * cellSize, height);
+    //line(0, i * cellSize, height, i * cellSizeX);
   }
   for(int i=0; i<numRows; i++)
   {
     numZine = 50;  
     stroke(0);
     line(width, i * numZine / cellSizeX, 0, i * cellSize * 2);
-    line(i * numKano / cellSize, 0, 700, height);
+    line(i * numKano, 0, 700, height);
   }
   
 }
