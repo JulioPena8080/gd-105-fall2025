@@ -29,7 +29,8 @@ void draw()
   
   // shapes, stroke and fills with some text around it
   fill(255, 255, 255);
-  textMode(CENTER); // line does not have syntax error but it dont center 
+  textMode(CENTER); // line does have syntax error in textMOde(3) 
+                    // is not supported by this render but it dont center 
   textSize(60);
   text(" G   A  M   E             GRIDS", 20, 350); // display text in the canvas with coordinates 
   textSize(20); 
