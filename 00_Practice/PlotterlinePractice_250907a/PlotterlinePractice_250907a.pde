@@ -3,15 +3,15 @@
 
 void setup()
 {
-  size(700, 700);
+  size(8, 700);
   background(255); // Color grey in background
 }
 
 // A second method to define each variable and it's conditions
 void draw()
 {
-  scale(0.8); // Scaling is to see beyond grid
-  //translate(300, 150); // translating for centering 
+  scale(15, 20, 0.1); // Scaling is to see beyond grid
+  translate(CENTER, CENTER); // translating for centering 
   fill(255, 60);
   
   // Integers defined for the grid
@@ -79,5 +79,14 @@ void draw()
     line(width, i * numZine / cellSizeX, 0, i * cellSize * 2);
     line(i * numKano, 0, 700, height);
   }
-  
+  for(int i=0; i<numCols; i++)
+  {
+    stroke(3);
+    line(i * cellSize, height, 0, i * numCols);
+  }
+  for(int i=0; i<numCols; i++)
+  {
+    stroke(3);
+    line(width,i * cellSize, 0, 700);
+  }
 }
