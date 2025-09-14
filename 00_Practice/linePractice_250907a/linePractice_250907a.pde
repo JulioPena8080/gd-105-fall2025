@@ -6,11 +6,37 @@ void setup()
   size(700, 700);
   background(70, 150, 60); // Color grey in background
 }
+int upToHeight = height;
+int upToWidth = width;
+
+int movePixel = 10;
+int movePixels = 100;
+
+int toStartAt = 0;
+int toEndAt = 400;
+
+String checkBoolean = null;
+
+Boolean makeTrueEvent = true;
+Boolean StartAnimation = true;
+Boolean codeStart = true;
+
+Boolean codeStop = false;
+Boolean stateOfNone = false;
 
 
 // A second method to define each variable and it's conditions
 void draw()
 {
+  if (codeStart == true) 
+    {
+      background(75,75,75);
+      if(codeStart == true){;background(120,140,60,90); // this background is another color it ran
+    for(int i=0; i<movePixels; i++){background(0,145,80);fill(0,0,25);circle(200,140,100);}} 
+    else{background(255,0,0);}
+      
+    }
+  
   scale(0.7); // Scaling is to see beyond grid
   //translate(300, 150); // translating for centering 
   fill(255, 60);
@@ -118,5 +144,5 @@ void draw()
                                                 // the line before is draw
     line(i * cellSize, 0, i * cellSize, height);
   }                             // times one works
-  
+ 
 }
