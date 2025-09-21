@@ -34,7 +34,14 @@ void draw()
       if(codeStart == true){;background(120,140,60,90); // this background is another color it ran
     for(int i=0; i<movePixels; i++){background(0,145,80);fill(0,0,25);circle(200,140,100);}} 
     else{background(255,0,0);}
+      movePixels=200;codeStart=false;
+      fill(40, 175, 50);
+      triangle(10, 40, 30, 40, 100, 10);
+      triangle(10, 100, 40, 30, 40, 10);
       
+      // other shapes
+      
+      square(400, 10, 100);
     }
   
   scale(0.7); // Scaling is to see beyond grid
@@ -65,7 +72,7 @@ void draw()
   text("2", 144, 15);
   text("3", 216, 15);
   text("4", 288, 15); // had to go back to the basic to remember how I got here
-  
+  text("5", 354, 15);
   // floating decimals from the width divided by columns
   float cellSize = width / numCols; 
   
@@ -88,7 +95,7 @@ void draw()
   }
   
   
-  for(int arr : unit)  // trying to use foreach 
+  for(int arr : unit)  // trying to use foreach // never did but the function working without ca
                        // loop to mark each column with a digit 
                        // to be able to measure        
   {
