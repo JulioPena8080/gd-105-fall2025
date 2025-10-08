@@ -1,10 +1,8 @@
 void setup(){
   size(100, 100);
   background(255);
-  frameRate(1);
 }
 void draw(){
-  stroke(2);
   strokeWeight(2);
   square(25, 25, 50);
   fill(0);
