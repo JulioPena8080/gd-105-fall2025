@@ -229,7 +229,8 @@ void setup(){
           }
 
 
-} 
+}
+
 
 void draw(){
   
@@ -240,9 +241,13 @@ void draw(){
   charTwo = loadImage("charTwo.png");
   
   
+  
   if(keyPressed && key == ' '){
-    image(charTwo, 250, 0);
+    image(charTwo, 0, 0);
    
+  }
+  if(keyPressed && key == 'd'){
+    image(charTwo, moveX, 0);
   }
 
   //image(imageSprite, 250, 0); // for loops for iteration
