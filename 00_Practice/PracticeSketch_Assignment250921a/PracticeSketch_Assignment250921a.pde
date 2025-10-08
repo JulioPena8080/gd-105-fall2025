@@ -1,9 +1,10 @@
 void setup(){
      size(100,100);
      background(225);
+     
 }
 void draw(){
-     stroke(2);
+     strokeWeight(4);
      line(25, 75, 40, 50); // LEFT SIDE
      line(25, 25, 40, 50);
      

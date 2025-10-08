@@ -20,13 +20,14 @@ void draw()
       for(int i=0; i<amount; i++)
       {  
         amount = 2;
-        stroke(2);
+        strokeWeight(4);
         circle(600, 300, 200);
         if(amount == 2){stroke(2);circle(100, 400, 50);};
         if(amount > 1){fill(0,175,0);circle(50, 50, 95);}
       }
+  
   fill(0,0,255);
-  circle(550, 310, 100);
+  circle(760, 510, 100);
   fill(255);
   textSize(40);
   text("ATOMS", 600, 70);
