@@ -19,7 +19,7 @@ void setup() {
 void draw(){
   // variables
   int num5=500;
- 
+  
 
   // load images
   PImage img1;
@@ -79,10 +79,11 @@ void draw(){
           for(float s = 20; s<50; s++){
               fill(0, 240, 130);
               
-              ellipse(x*2+8*20, y*2+80, 275, 290); }}}
+              ellipse(800*2+8*20, 600*2+80, 275, 290); }}}
               //    x has 162*x and y has 62*y
               // display images with 
               scale(0.01);
+              //     i        x       y 
               image(img1, num5*90, 90*220);
               image(img2, num5*70, 90*200);
               image(img3, num5*50, 90*180);
@@ -101,6 +102,9 @@ void draw(){
               image(img16, num5*90, 90*190);
               image(img17, num5*45, 90*170);
               image(img18, num5*50, 90*360);
+              image(img19, num5*30, 90*425);
+              
+              
               
               
                 
