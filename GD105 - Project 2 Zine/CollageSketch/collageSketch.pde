@@ -153,7 +153,7 @@ int b = 42500; // max at 85
 int e = 90; // static number
 
 fill(0, 255, 100);
-strokeWeight(20000);
+strokeWeight(2000);
 ellipse(n5*65, 90*320, n5*65, 90*490);
 
 image(img1, random(a, b), e*random(x, y));
@@ -213,6 +213,10 @@ image(img54, random(a, b), e*random(x, y));
 image(img55, random(a, b), e*random(x, y));
 image(img56, random(a, b), e*random(x, y));
 image(img57, random(a, b), e*random(x, y));
-
-
+}
+int e = 90;
+void mouseClicked(){
+  background(#ff00ff);
+  fill(#ff00ff);
+  ellipse(mouseX*e, mouseY*e, 4000, 4000);
 }
