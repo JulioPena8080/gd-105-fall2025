@@ -12,8 +12,10 @@ void setup() {
   frameRate(60);
   scale(0.9);
   text("Loading GIF please, wait...", 350, 300, 5000);
-  
-}  
+  rectMode(CENTER);
+  strokeWeight(5);
+  rect(415, 295, 180, 60);  
+}   
 
 void draw(){
   
@@ -134,4 +136,7 @@ image(img34, n5*45, 90*random(190, 420));
 image(img35, n5*60, 90*random(190, 420));
 image(img36, n5*55, 90*random(190, 420));
 
+fill(0, 255, 100);
+strokeWeight(20);
+ellipse(n5*85, 90*220, n5*85, 90*220);
 }
