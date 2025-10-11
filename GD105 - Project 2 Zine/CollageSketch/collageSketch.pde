@@ -9,7 +9,6 @@ void setup() {
   // setup canvas for display with background
   size(800, 600); // x, y cannot reach the variables so 
   background(backgroundCover);
-  frameRate(120);
   scale(0.9);
   text("Loading GIF please, wait...", 350, 300, 5000);
   rectMode(CENTER);
@@ -140,6 +139,12 @@ PImage img56;
 img56 = loadImage("56.jpg");
 PImage img57;
 img57 = loadImage("57.jpg");
+PImage img58;
+img58 = loadImage("58.jpg");
+PImage img59;
+img59 = loadImage("59.jpg");
+PImage img60;
+img60 = loadImage("60.jpg");
 // up to 60 pictures
 
 scale(0.01);
@@ -155,7 +160,11 @@ int e = 90; // static number
 fill(0, 255, 100);
 strokeWeight(2000);
 ellipse(n5*65, 90*320, n5*65, 90*490);
+fill(random(120, 230), random(120, 230), random(120, 230));
+ellipse(n5*65, 90*330, n5*65, 90*500);
 
+
+// display images 
 image(img1, random(a, b), e*random(x, y));
 image(img2, random(a, b), e*random(x, y));
 image(img3, random(a, b), e*random(x, y));
@@ -213,8 +222,12 @@ image(img54, random(a, b), e*random(x, y));
 image(img55, random(a, b), e*random(x, y));
 image(img56, random(a, b), e*random(x, y));
 image(img57, random(a, b), e*random(x, y));
+image(img58, random(a, b), e*random(x, y));
+image(img59, random(a, b), e*random(x, y));
+image(img60, random(a, b), e*random(x, y));
   
-  int xAxis = 24200;
+  // Eyes coordinates turned into intergers
+  int xAxis = 24200; // multiples of 2,000's for (y) and 10,000's for (x)
   int yAxis = 16500;
   int xAxis1 = 32800;
   int yAxis1 = 16500;
