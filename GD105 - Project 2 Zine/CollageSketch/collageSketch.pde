@@ -216,7 +216,7 @@ image(img57, random(a, b), e*random(x, y));
 }
 int e = 90;
 void mouseClicked(){
-  background(#ff00ff);
+  
   fill(#ff00ff);
   ellipse(mouseX*e, mouseY*e, 4000, 4000);
 }
