@@ -213,10 +213,15 @@ image(img54, random(a, b), e*random(x, y));
 image(img55, random(a, b), e*random(x, y));
 image(img56, random(a, b), e*random(x, y));
 image(img57, random(a, b), e*random(x, y));
-}
-int e = 90;
-void mouseClicked(){
+  
+  int xAxis = 24200;
+  int yAxis = 16500;
+  int xAxis1 = 32800;
+  int yAxis1 = 16500;
   
   fill(#ff00ff);
-  ellipse(mouseX*e, mouseY*e, 4000, 4000);
+  ellipse(xAxis, yAxis, 4000, 4000);
+  ellipse(xAxis1, yAxis1, 4000, 4000);
+  
+  
 }
