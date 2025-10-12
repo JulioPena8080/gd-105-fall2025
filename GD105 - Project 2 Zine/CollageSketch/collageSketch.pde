@@ -1,4 +1,4 @@
-int backgroundCover = #aa00af;
+int backgroundCover = #ff00ff;
 
 
 float w = width;
@@ -10,6 +10,7 @@ void setup() {
   size(800, 600); // x, y cannot reach the variables so 
   background(backgroundCover);
   scale(0.9);
+  fill(0);
   text("Loading GIF please, wait...", 350, 300, 5000);
   rectMode(CENTER);
   noFill();
@@ -235,6 +236,8 @@ image(img60, random(a, b), e*random(x, y));
   fill(#ff00ff);
   ellipse(xAxis, yAxis, 4000, 4000);
   ellipse(xAxis1, yAxis1, 4000, 4000);
+  fill(backgroundCover);
+  strokeWeight(2);
   
   
 }
