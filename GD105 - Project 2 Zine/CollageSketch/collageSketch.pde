@@ -89,7 +89,7 @@ img30 = loadImage("30.jpg");
 PImage img31;
 img31 = loadImage("31.jpg");
 PImage img32;
-img32 = loadImage("32.jpg");
+img32 = loadImage("32.png");
 PImage img33;
 img33 = loadImage("33.jpg");
 PImage img34;
