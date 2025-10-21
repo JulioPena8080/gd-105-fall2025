@@ -19,7 +19,7 @@ void setup() {
   rect(415, 295, 180, 60);  
 }   
 
-void draw(){
+void draw(){frameRate(60);
   
 background(#ffffff);
 // variables
@@ -79,6 +79,7 @@ ellipse(n5*65, 90*330, n5*65, 90*500);
 
 
 // display images 
+
 image(img1, random(a, b), e*random(x, y));
 image(img2, random(a, b), e*random(x, y));
 image(img3, random(a, b), e*random(x, y));
