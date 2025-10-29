@@ -3,7 +3,7 @@
 void setup() 
 {
   size(600, 600); // size of canvas
-  background(200, 50, 30); // Color
+  background(200, 50, 30); // color
   stroke(225); // color of the line
 }
 
@@ -19,4 +19,4 @@ void draw()
 }
 
 // If this code is tested on processing you will see every line 
-// drawn with the first method which display each row on the screen
+// Drawn with the first method which display each row on the screen

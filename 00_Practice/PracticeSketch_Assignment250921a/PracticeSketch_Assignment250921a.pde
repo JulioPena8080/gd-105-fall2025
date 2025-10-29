@@ -4,7 +4,7 @@ void setup(){
      
 }
 void draw(){
-     stroke(color(20, 120, 20)); // green stroke
+     stroke(0); // green stroke
      strokeWeight(4);
      strokeCap(ROUND);
      line(25, 75, 40, 50); // LEFT SIDE
@@ -12,4 +12,5 @@ void draw(){
      
      line(75, 75, 60, 50); // RIGHT SIDE
      line(75, 25, 60, 50);
+     
 }

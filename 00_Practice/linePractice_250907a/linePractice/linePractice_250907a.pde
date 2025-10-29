@@ -151,5 +151,5 @@ void draw()
                                                 // the line before is draw
     line(i * cellSize, 0, i * cellSize, height);
   }                             // times one works
- 
+ saveFrame("BoardGame Design.png");
 }

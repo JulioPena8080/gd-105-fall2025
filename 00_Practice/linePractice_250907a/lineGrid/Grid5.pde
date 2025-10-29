@@ -16,6 +16,6 @@ void draw() {
     line(0, i * cellSize, width, i * cellSize); } // 4 equations instead of coordinates for the rows to be display horizontally
   for (int i = 0; i < numCols; i++) {  // Same equation as above
     line(i * cellSize, 0, i * cellSize, height);} // Opposite to the one above
-    System.out.println("CellSize number of Columns: " + cellSize); // Check for CellSize are now 13 based on the indentation of the for loop
+    //System.out.println("CellSize number of Columns: " + cellSize); // Check for CellSize are now 13 based on the indentation of the for loop
     
 }

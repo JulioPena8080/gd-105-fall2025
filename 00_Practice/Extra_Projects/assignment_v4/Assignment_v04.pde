@@ -17,4 +17,5 @@ void draw() {
   
   for (int i = 0; i < numCols; i++) {
     line(i * cellSize, 0, i * cellSize, height);}
+  
 }

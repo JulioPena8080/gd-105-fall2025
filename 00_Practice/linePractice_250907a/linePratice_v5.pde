@@ -10,11 +10,12 @@ void draw() {
   
   float cellSize =  width / numCols;
   
-  stroke(0); // set line color to black 
+  stroke(250); // set line color to black 
   
   for (int i = 0; i < numRows; i++) {
-  line(0, i * cellSize, width, i * cellSize); }
+    line(0, i * cellSize, width, i * cellSize); }
   
   for (int i = 0; i < numCols; i++) {
     line(i * cellSize, 0, i * cellSize, height);}
+
 }
