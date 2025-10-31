@@ -10,4 +10,5 @@ void setup(){
 void draw(){
   circle(random(c), random(c), 10); // set to random at size 10 
   circle(random(c), random(c), 10);  
+  //saveFrame("####lines.png"); // WARNING
 }
