@@ -77,10 +77,12 @@ String imgs(String one, String two, String three,
           
 
 
-                image(one, 0, 0); 
-                image(two, 0, 0); 
-                image(three, 0, 0); 
-                image(four, 0, 0); 
-                image(five, 0, 0); 
+          image(img1, 0, 0); 
+          image(img2, 0, 0); 
+          image(img3, 0, 0); 
+          image(img4, 0, 0); 
+          image(img5, 0, 0); 
+          imgs();
+          
     //six, seven, eight, nine, ten, eleven, twelve, thirdT, fourT, fiveT, sixT);
-}               
+}       
