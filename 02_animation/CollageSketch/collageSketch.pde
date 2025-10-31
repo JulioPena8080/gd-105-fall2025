@@ -9,6 +9,7 @@ void setup() {
   // setup canvas for display with background
   size(800, 600); // x, y cannot reach the variables so 
   background(backgroundCover);
+  translate(w/2, h/2);
   scale(0.9);
   fill(0);
   text("Loading GIF please, wait...", 350, 300, 5000);
@@ -19,7 +20,8 @@ void setup() {
   rect(415, 295, 180, 60);  
 }   
 
-void draw(){frameRate(60);
+void draw(){
+frameRate(60);
   
 background(#ffffff);
 // variables
@@ -59,8 +61,6 @@ img15 = loadImage("100.png");
 PImage img16;
 img16 = loadImage("avatar2.png");
 
-// up to 60 pictures
-
 scale(0.01);
 //     i        x       y 
 // axis to the random sequence of coordinates
@@ -76,7 +76,6 @@ strokeWeight(2000);
 ellipse(n5*65, 90*320, n5*65, 90*490);
 fill(random(120, 230), random(120, 230), random(120, 230));
 ellipse(n5*65, 90*330, n5*65, 90*500);
-
 
 // display images 
 
