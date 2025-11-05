@@ -3,37 +3,42 @@ void setup(){ // set up
   background(255);
 }
 
-float resizeX = width/2-50;
-float resizeY = height/2-50;
 
 void draw(){ // display in screen 
+  
   background(255);
-  translate(resizeX, height/2-50);
-  translate(width/2-50, resizeY);
-  scale(2); // create shape times 2 it's original size
+  // AXIS sample for reference
+  line(250, 0, width/2, 500);
+  line(0, height/2, 500, 250);
+  // actually project
+  noFill();
+  translate(width/2, height/2); // main transformation
+  scale(10); // create shape times the interger it's original size
+  
   
   circle(0, 0, 25); // circle close to the center
-  noFill();
-  rotate(75); 
-  scale(0.25);
-  square(0, 0, 25); // square close to circle 
+  scale(0.24);
   
-  //translate(width/2-100, height/2-150);
-  translate(width/2-450, height/2-350); // after translating 
-                                        // the centered origin is (0, 0)
+  rotate(TAU * (1.125 / 1.4));
+  translate(-25, 25); // first transformation before shapes display
+  rotate(radians(25));
+  square(0, 0, 25); // 1)
+  
+  rotate(TAU * (1.125 / 0.9));
+  translate(-50, 25); // first transformation controls 3 shapes at once
+  square(0, 0, 25); // 2) 
+  
+  rotate(TAU * (1.125 / 0.9));
+  translate(-50, 25); // secound controls 2 at once
+  square(0, 0, 25); // 3)
+  
+  rotate(TAU * (1.125 / -152.6));
+  translate(-50, -50); // third controls 1 at once which is the one below 
+  square(0, 0, 25); // 4) 
 
   
   
-  square(0, 0, 25); // far away from the circle 
-  //translate(width/2-275, height/2-150);
-
-  
-  square(0, 0, 25);
-  //translate(width/2-100, height/2-50);
-
-  
-  square(0, 0, 25);
-  //translate(width/2-100, height/2-50);
+  // save a copy of the canvas as a png file 
   //saveFrame("section_11.png");
 
 }
