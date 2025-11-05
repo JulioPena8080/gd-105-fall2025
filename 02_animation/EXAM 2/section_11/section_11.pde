@@ -1,5 +1,5 @@
 void setup(){ // set up
-  size(500, 500);
+  size(100, 100);
   background(255);
 }
 
@@ -11,7 +11,7 @@ void draw(){ // display in screen
   // actual project is to draw a sketch using transformation such rotation 
   // with TAU without moving the object's coordinates 
   translate(width/2, height/2); // main transformation to set origin at center of canvas
-  scale(5); // create shape times the interger it's original size
+  scale(3); // create shape times the interger it's original size
   
   noFill();
   circle(0, 0, 25); // circle at the translated origion
@@ -37,7 +37,7 @@ void draw(){ // display in screen
   
   // save a copy of the canvas as a png file 
   //if(frameCount == 1){
-  //save("section_11.png");
+  //    save("section_11.png");
   //}
   
   // this way of saving is kinda a bug
