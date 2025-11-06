@@ -1,88 +1,50 @@
 float w = width;
 float h = height;
-void canvas(){
-  int backgroundCover = #ff00ff;
-  background(backgroundCover);
-  size(800, 600);
-  return;
-}
+color backgroundCover = #ff00ff;
+
+PImage img1, img2, img3, img4, img5, img6, img7, img8, img9, img10;
+
 
 // make canvas function without setup
-void setup(){
-  canvas();
-  PImage d = new PImage();
-  
-  img = loadImage("45.png");
-  translate(w/2, h/2);
-  scale(0.01);
-  image(img, w/2, h/2);
+void setup() {
+  size(500, 500);
+  background(backgroundCover);
+  img1 = loadImage("1.png");
+  img2 = loadImage("ravioli.png");
+  img3 = loadImage("772.png");
+  img4 = loadImage("80.png");
+  img5 = loadImage("90.png");
+  img6 = loadImage("50.png");
+  img7 = loadImage("9.png");
+  img8 = loadImage("32.png");
+  img9 = loadImage("41.png");
+  img10 = loadImage("35.png");
+}
+float x = random(-250, 250);
+float y = random(-250, 250);
+void draw() {
+  frameRate(1);
+  scale(0.75);
+  translate(width/2, height/2);
+  //float x = random(-300, 300);
+  for(int i=0; i<x; i++){
+    
+    x=y/2;
+  }
+  image(img1, x, y);
+  image(img2, x, y);
+  image(img3, x, y);
+  image(img4, x, y);
+  image(img5, x, y);
+  image(img6, x, y);
+  image(img7, x, y);
+  image(img8, x, y);
+  image(img9, x, y);
+  image(img10, x, y);
+  //image(img11, 0, 0);
+  //image(img12, 0, 0);
+  //image(img13, 0, 0);
+  //image(img14, 0, 0);
+  //image(img15, 0, 0);
 
 }
-
-String imgs(String one, String two, String three,
-            String four, String five, String six,
-            String seven, String eight, String nine,
-            String ten, String eleven, String twelve,
-            String thirdT, String fourT, String fiveT,
-            String sixT){
-          one = "1.png"; 
-          two = "6.png";
-          three = "9.png";
-          four = "32.png";
-          five = "33.png";
-          six = "35.png";
-          seven = "41.png";
-          nine = "50.png";
-          ten = "77.png";
-          eleven = "80.png";
-          twelve = "89.png";
-          thirdT = "90.png";
-          fourT = "98.png";
-          fiveT = "100.png";
-          sixT = "avatar2";
-          
-          PImage img1;
-          PImage img2;
-          PImage img3;
-          PImage img4;
-          PImage img5;
-          PImage img6;
-          PImage img7;
-          PImage img8;
-          PImage img9;
-          PImage img10;
-          PImage img11;
-          PImage img12;
-          PImage img13;
-          PImage img14;
-          PImage img15;
-          PImage img16;
-          
-          img1 = loadImage(one);
-          img2 = loadImage(two);
-          img3 = loadImage(three);
-          img4 = loadImage(four);
-          img5 = loadImage(five);
-          img6 = loadImage(six);
-          img7 = loadImage(seven);
-          img8 = loadImage(eight);  
-          img9 = loadImage(nine);
-          img10 = loadImage(ten);
-          img11 = loadImage(eleven);
-          img12 = loadImage(twelve);
-          img13 = loadImage(thirdT);
-          img14 = loadImage(fourT);
-          img15 = loadImage(fiveT);
-          img16 = loadImage(sixT);
-          
-
-
-          image(img1, 0, 0); 
-          image(img2, 0, 0); 
-          image(img3, 0, 0); 
-          image(img4, 0, 0); 
-          image(img5, 0, 0); 
-          imgs();
-          
-    //six, seven, eight, nine, ten, eleven, twelve, thirdT, fourT, fiveT, sixT);
-}       
