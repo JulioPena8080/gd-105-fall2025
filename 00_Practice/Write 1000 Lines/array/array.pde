@@ -1,5 +1,4 @@
 
-
 // customized functions
 void arrayNumbers(){
     int[] array = new int[3]; // allocating the array
@@ -21,7 +20,7 @@ void setup(){
 // active sketck
 void draw(){
     // Pink background
-    background(255, 30, 200);
+    background(9, 30, 200);
     // displays objects
     arrayNumbers();
 }
