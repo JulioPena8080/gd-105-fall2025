@@ -9,7 +9,7 @@ void setup() {
   
   size(1000, 500);
   background(backgroundCover);
-  
+
   //loaded images  
   img1 = loadImage("1.png");
   img2 = loadImage("ravioli.png");
@@ -27,9 +27,12 @@ void setup() {
 
 // customized function named collage
 void collage(){  
-  
+    
     scale(frameCount * 0.0002); // outter scaling 
+
+    
     translate(width/0.42, height/0.46); // center translation
+   
     image(img1, 0, -133); 
     rotate(TAU * 0.125 * (frameCount * 0.01)); // TAU rotation multiply by 0.125 and times each frame multiply by 0.01
     image(img2, -186, 0);
@@ -46,18 +49,21 @@ void collage(){
     translate(-100, 0);
     rotate(TAU * -1.1 * (frameCount * 0.1));
     image(img8, -273, -278);
+    pushMatrix();
+    
     translate(-100, 0);
     rotate(TAU * -1.1 / (frameCount * 0.1)); // divided
     image(img9, -18, -37);
     image(img9, -18, -37, 20, 20);
     translate(-100, 0);
+    
+    
     rotate(TAU * -1.1 / (frameCount * 0.1));
     image(img10, -114, -336);
     rotate(TAU * -1.0 / (frameCount * 0.1));  // up to here
     image(img11, -210, 0); 
-    if(frameCount == 1220){
-      save("GIF_snap.png");
-    }
+    
+    popMatrix();
     
   }
   
@@ -68,7 +74,7 @@ void draw() {
     translate(width/2, height/2); // translate to center
     rotate( frameCount * 19.5 * (TAU * (1.5 / 8.5) )); // rotate each frame multiply by 19.5 times TAU multiply by 1.5 divided by 8.5
   }
-   
+  
   collage(); // calling the customized function collage
-
+  
 }

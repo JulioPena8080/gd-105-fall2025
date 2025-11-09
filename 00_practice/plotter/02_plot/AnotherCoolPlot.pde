@@ -1,12 +1,12 @@
 import processing.svg.*; // importing everything from processing library of scaling vector graphic
 void setup(){
-  size(100, 100);
+  size(101, 101);
 
 }
 void draw(){
   frameRate(1);
   background(255);
-
+ 
   beginRecord(SVG, "AnotherCoolPlot"); // set format and file name
   // normal lines
   line(0, 0, 100, 0); 
@@ -16,6 +16,7 @@ void draw(){
   // extra 
   curve(15, 0, 15, 100, 85, 0, 85, 100);
   curve(100, 85, 0, 85, 100, 15, 0, 15);
+  
   
   //line();
   
