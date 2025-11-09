@@ -4,10 +4,13 @@ void setup(){
 
 }
 void draw(){
+  
   frameRate(1);
   background(255);
  
+
   beginRecord(SVG, "AnotherCoolPlot"); // set format and file name
+  noFill();
   // normal lines
   line(0, 0, 100, 0); 
   line(0, 0, 0, 100);
@@ -37,8 +40,9 @@ void draw(){
   square(0, 0, 25);
   
   square(0, 0, 15);
-  
-  
+
   
   endRecord(); // finish the recording for the plotter 
+
+  
 }
