@@ -9,7 +9,7 @@ int q = 8;
 // the X axis 
 int x = 50;
 
-void changeInterface(){ // Change Scene once is clicked on but is not functinal yet...
+void changeInterface(){ // Change Scene once is clicked on but is not functional yet...
     fill(#3a0f9a);
     rect(50, 50, 125, 25);
     fill(255);
