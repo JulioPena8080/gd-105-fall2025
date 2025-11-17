@@ -8,39 +8,27 @@ PImage img1, img2, img3, img4, img5, img6,
 // make canvas function without setup
 void setup() {
   
-  size(1000, 500);
+  size(1000, 700);
   background(backgroundCover);
   //printMatrix();
   //loaded images  
-  img1 = loadImage("1.png");
-  img2 = loadImage("ravioli.png");
-  img3 = loadImage("bendy.png");
-  img4 = loadImage("80.png");
-  img5 = loadImage("35.png");
-  img6 = loadImage("50.png");
-  img7 = loadImage("9.png");
-  img8 = loadImage("32.png");
-  img9 = loadImage("41.png");
-  img10 = loadImage("35.png");
-  img11 = loadImage("77copy.png");
-  img12 = loadImage("switch.png");
-  img13 = loadImage("box.png");
-  img14 = loadImage("bendy.png");
-  img15 = loadImage("hall.png");
-  img16 = loadImage("bendy.png");
+  img1 = loadImage("switch.png");
+  img2 = loadImage("switch.png");
+  img3 = loadImage("box.png");
+  img4 = loadImage("box.png");
+  img5 = loadImage("seed.png");
+  img6 = loadImage("seed.png");
+  img7 = loadImage("bendy.png");
+  img8 = loadImage("bendy.png");
+  img9 = loadImage("32.png");
+  img10 = loadImage("32.png");
+  img11 = loadImage("41.png");
+  img12 = loadImage("41.png");
+  img13 = loadImage("hall.png");
+  img14 = loadImage("hall.png");
+  img15 = loadImage("35.png");
+  img16 = loadImage("77copy.png");
 
-}
-void matrix(){
-    //if(frameCount == 40){
-    //  pushMatrix();
-    //}
-    //if(frameCount == 1000){
-    //  popMatrix();
-    //}
-      if(frameCount == 1440){
-        resetMatrix();
-      } 
-      
 }
 float x = 0;
 float y = 0;
@@ -48,16 +36,18 @@ float y = 0;
 PVector position = new PVector(0, 0);
 // customized function named collage
 void collage(){   
+    //rotate(TAU * -1.1 / (frameCount * 0.1)); // divided
+  
     //pushMatrix();
     
     //frameRate(1);
     
     //background(backgroundCover);
     translate(430, 152);
-    scale( random(0.50) );
+    scale( random(0.454) );
     image(img9, 1065, 2602); // same image different sizes
     image(img10, -499, 557);
-    rotate(TAU * -1.80 * (frameCount * 0.001));  // up to here
+    //rotate(TAU * -1.80 * (frameCount * 0.031));  // up to here
     //background(backgroundCover);
     
     image(img11, x, y);
@@ -69,12 +59,12 @@ void collage(){
     image(img15, random(1751), random(1169));
     image(img16, random(-3058), random(1245));
     
-    scale(0.260); // outter scaling 
+    scale(0.049); // outter scaling 
     //translate(width/-0.67, height/-0.21); // center translation
-    scale(26);
+    scale(381);
     //rotate(TAU * 0.125 * (frameCount * 0.01));
-    image(img1, 186, -67); 
-    image(img1, 230, -39);
+    image(img1, -1186, -67); 
+    image(img1, 9230, -39);
     //rotate(TAU * 0.125 * (frameCount * 0.01)); // TAU rotation multiply by 0.125 and times each frame multiply by 0.01
     image(img2, -395, 168);
     //rotate(TAU * 1.0 * (frameCount * 0.01));
@@ -98,31 +88,26 @@ void collage(){
     image(img8, 7, -272);
     
     //translate(-100, 0);
-    rotate(TAU * -1.1 / (frameCount * 0.1)); // divided
+    
 
     //translate(-204, 0);
     //rotate(TAU * -1.1 / (frameCount * 0.1));
     //popMatrix();
 
-    if(frameCount == 992500){
-      exit();
-    }
+
     //println("Pixels: ", x);
   }
   
 
 void draw() {
-  //background(backgroundCover);
-  if(frameCount < 99500){ // if the frameCount is less than 99500 translation and rotation takes place
-    pushMatrix();
-    translate(width/2, height/2); // translate to center
-    
-    popMatrix();
-    //rotate( frameCount * 19.5 * (TAU * (1.5 / 8.5) )); // rotate each frame multiply by 19.5 times TAU multiply by 1.5 divided by 8.5
-    if(frameCount >= 1500){resetMatrix();}
-    
-}
-
+  println("frame: " + frameCount); // prints each frame in console
+  
   collage(); // calling the customized function collage 
+    
+    if(frameCount == 1500){
+        saveFrame("lastFrame.png");
+        exit();
+        
+    }
   
 }
