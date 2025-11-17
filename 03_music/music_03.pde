@@ -9,11 +9,27 @@ int q = 8;
 // the X axis 
 int x = 50;
 
+float mX = mouseX;
+float mY = mouseY;
+
+void rect(){
+  int w = 50;
+  int h = 50;
+  int lx = 125;
+  int ly = 25;
+  rect(w, h, lx, ly);
+  
+  
+  
+}
+
 void changeInterface(){ // Change Scene once is clicked on but is not functional yet...
     fill(#3a0f9a);
-    rect(50, 50, 125, 25);
+    rect();
     fill(255);
     text("Oscillators", 90, 65);
+
+    
 }
 
 void channelSelection(){ // selection for each channel "from 1 to 4"
@@ -22,6 +38,7 @@ void channelSelection(){ // selection for each channel "from 1 to 4"
     fill(255);
     text("channel", 355, 115);
     text("1", 373, 140);
+    
     
 }
 
