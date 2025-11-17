@@ -44,10 +44,10 @@ void collage(){
     
     //background(backgroundCover);
     translate(430, 152);
-    scale( random(0.454) );
+    scale( 0.454 );
     image(img9, 1065, 2602); // same image different sizes
     image(img10, -499, 557);
-    //rotate(TAU * -1.80 * (frameCount * 0.031));  // up to here
+    rotate(TAU * -1.80 * (frameCount * 0.031));  // up to here
     //background(backgroundCover);
     
     image(img11, x, y);
@@ -59,9 +59,9 @@ void collage(){
     image(img15, random(1751), random(1169));
     image(img16, random(-3058), random(1245));
     
-    scale(0.049); // outter scaling 
+    scale(0.020); // outter scaling 
     //translate(width/-0.67, height/-0.21); // center translation
-    scale(381);
+    scale(1);
     //rotate(TAU * 0.125 * (frameCount * 0.01));
     image(img1, -1186, -67); 
     image(img1, 9230, -39);
