@@ -1,8 +1,8 @@
 color backgroundCover = lerpColor(#00ff00, #ff00ff, 0.6); 
 
-PImage img1, img2, img3, img4, img5, img6, 
-       img7, img8, img9, img10, img11, img12, 
-       img13, img14, img15, img16;
+PImage cards, exit, box, switsh, bendi, laptop, 
+       bag, bendy, backpack, table, fire, seed, 
+       hall, cone, ravioli, boat;
 
 
 // make canvas function without setup
@@ -10,104 +10,120 @@ void setup() {
   
   size(1000, 700);
   background(backgroundCover);
-  //printMatrix();
+
   //loaded images  
-  img1 = loadImage("100.png");
-  img2 = loadImage("100.png");
-  img3 = loadImage("box.png");
-  img4 = loadImage("33.png");
-  img5 = loadImage("100.png");
-  img6 = loadImage("35.png");
-  img7 = loadImage("80.png");
-  img8 = loadImage("bendy.png");
-  img9 = loadImage("32.png");
-  img10 = loadImage("table.png");
-  img11 = loadImage("bendy.png");
-  img12 = loadImage("41.png");
-  img13 = loadImage("9.png");
-  img14 = loadImage("100.png");
-  img15 = loadImage("deli.png");
-  img16 = loadImage("77copy.png");
+  cards = loadImage("cards.png");
+  exit = loadImage("exit.png");
+  box = loadImage("box.png");
+  switsh = loadImage("switch.png");
+  bendi = loadImage("bendi.png");
+  laptop = loadImage("laptop.png");
+  bag = loadImage("bag.png");
+  bendy = loadImage("bendy.png");
+  backpack = loadImage("backpack.png");
+  table = loadImage("table.png");
+  fire = loadImage("911.png");
+  seed = loadImage("seed.png");
+  hall = loadImage("hall.png");
+  cone = loadImage("cone.png");
+  ravioli = loadImage("ravioli.png");
+  boat = loadImage("boat.png");
 
 }
 
+void images(){
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(cards, 0 ,0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(exit, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(box, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(switsh, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(bendi, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(laptop, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(bag, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(bendy, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(backpack, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(table, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(fire, 0, 0);
+  
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(seed, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(hall, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(cone, 0, 0);
+    
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(ravioli, 0, 0);
+  
+  translate(0.0, 0.0);
+  scale(2.28);
+  image(boat, 0, 0);
+  
+}
+
 // customized function named collage
-void collage(){   
-    //rotate(TAU * -1.1 * (frameCount * 0.031)); // divided
-  
-    //pushMatrix();
+void transform(){   
     
-    //frameRate(1);
+    translate(width/2, height/2);
+    scale( 0.00004 );
+    //rotate(TAU * -1.80 * (frameCount * 0.31)); 
+    images();
     
-    //background(backgroundCover);
-    //pushMatrix();
-    translate(width/2*0.5, height/2*0.5);
-    scale( random(0.4) );
-    rotate(TAU * -1.80 * (frameCount * 0.0031));  // up to here
-   //opMatrix();
-    image(img9, random(-10058), random(180245)); // same image different sizes
-    image(img10, random(-10058), random(180245));
-    
-    //background(backgroundCover);
-    
-    image(img11, random(-10058), random(180245));
-    //translate(random(-150, 0), 0);
-    image(img12, random(-10058), random(180245));
-    image(img13, random(-10058), random(180245));
-    image(img14, random(-10058), random(180245));
-  
-    image(img15, random(-10058), random(180245));
-    image(img16, random(-10058), random(180245));
-    
-    //scale(0.020); // outter scaling 
-    //translate(width/-0.67, height/-0.21); // center translation
-    //scale(20);
-    //rotate(TAU * 0.125 * (frameCount * 0.01));
-    image(img1, random(-10058), random(180245)); 
-    image(img1, random(-10058), random(180245));
-    //rotate(TAU * 0.125 * (frameCount * 0.01)); // TAU rotation multiply by 0.125 and times each frame multiply by 0.01
-    image(img2, random(-10058), random(180245));
-    //rotate(TAU * 1.0 * (frameCount * 0.01));
-    
-    image(img3, random(-10058), random(180245));
-    //rotate(TAU * 1.0 / (frameCount * 0.1));  // divided
-    
-    image(img4, random(-10058), random(180245));
-    //rotate(TAU * 1.1 / (frameCount * 0.01)); // up to here
-    
-    image(img5, random(-10058), random(180245));
-    //rotate(TAU * 1.1 * (frameCount * 0.01));
-    
-    image(img6, random(-10058), random(180245));
-    //rotate(TAU * -1.1 * (frameCount * 0.01));
-    
-    image(img7, random(-10058), random(180245));
-    
-    //translate(-534, 0);
-    //rotate(TAU * -1.1 * (frameCount * 0.1));
-    image(img8, random(-10058), random(180245));
-    //resetMatrix();
-    //translate(-100, 0);
-    
-
-    //translate(-204, 0);
-    //rotate(TAU * -1.1 / (frameCount * 0.1));
-    //popMatrix();
-
-
-    //println("Pixels: ", x);
   }
   
-
+void collage(){
+  background(backgroundCover);
+}
 void draw() {
-  println("frame: " + frameCount); // prints each frame in console
-  
-  collage(); // calling the customized function collage 
+  //println("frame: " + frameCount); // prints each frame in console
+  collage();
+  transform(); 
+ 
+  // calling the customized function collage 
   
     if(frameCount == 7500){
-        saveFrame("lastFrame.png");
-        exit();
-        //resetMatrix();
+        saveFrame("lastFrame####.png");
+        println("saved!");
+
         
     }
   
