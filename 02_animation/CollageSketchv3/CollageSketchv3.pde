@@ -1,11 +1,17 @@
+PVector start = new PVector(0, 0);
+PVector end = new PVector(width/2, height/2);
+
 // Tweak mode
 void setup(){
   size(100, 100);
-}
-void draw(){
-  int x = 50; // change the 'x' values on tweak mode for a demostration
   background(255);
-  line(0, 0, 100, 100);
-  line(0, 100, 100, 0);
-  line(x, 50, 50, 100); 
+  
+}
+
+
+void draw(){
+  frameRate(1);
+  //background(255);
+  rotate(end.x * frameCount / 0.0050); 
+  line(start.x, start.y, end.x, end.y);
 }
