@@ -13,7 +13,7 @@ PVector bendys = new PVector(265, -1085);
 PVector backpacks = new PVector(-380, 0);
 PVector tables = new PVector(756, 3859);
 PVector fires = new PVector(-221, 389);
-PVector seeds = new PVector(-5342, 22900);
+PVector seeds = new PVector(-5342, 2900);
 PVector halls = new PVector(6786, -883);
 PVector delis = new PVector(-3273, -109);
 PVector raviolis = new PVector(0, 0);
@@ -52,17 +52,22 @@ void setup() {
 
 
 void badImages(){
-   scale(0.6);
+   scale(0.9);
    translate(cardss.x, cardss.y);
    image(cards, 0, 0); // resize
+   
    translate(bags.x, bags.y);
    image(bag, 0, 0); // resize
+   
    translate(backpacks.x, backpacks.y);
    image(backpack, 0, 0); // resize
+   
    translate(fires.x, fires.y);
    image(fire, 0, 0); // resize
+   
    translate(boats.x, boats.y);
    image(boat, 0, 0); // resize
+   
    translate(exits.x, exits.y);
    image(exit, 0, 0);
    
@@ -71,12 +76,16 @@ void badImages(){
   
    translate(laptops.x, laptops.y);
    image(laptop, 0, 0);
-  
-  
+   
+   translate(138, -116);
+   image(ravioli, 0, 0);
+   
+
+
 }
 
 void goodImages(){
-  scale(0.13);
+  scale(0.09);
   
   translate(boxs.x, boxs.y);
   image(box, 0, 0);
@@ -93,40 +102,37 @@ void goodImages(){
   translate(seeds.x, seeds.y);
   image(seed, 0, 0);
   
+  rotate(radians(90) * (frameCount * 0.03));
+
+  
   translate(halls.x, halls.y);
   image(hall, 0, 0);
   
+  rotate(radians(90) * (frameCount * 0.03));
+
   translate(delis.x, delis.y);
   image(deli, 0, 0);
-  
-  scale(-0.13);
-  translate(138, -116);
-  image(ravioli, 0, 0);// CAN'T FIND HIM, RAVIOLI TOO SLIK
+
   
 }
-//void rnd(){
-//  random(0, 9);
-//
 
 // customized function named collage
 void mainTransform(){   
     
     translate(width/2, height/2);
-    scale( 0.5 );
-    
+    scale( 0.3 );
+    imageMode(CENTER);
     badImages();
-    
     //rotate(TAU * (frameCount * 0.00031)); 
     goodImages();
     
   }
 void draw() {
-  background(backgroundCover);
-  
-  //println("frame: " + frameCount); // prints each frame in console
+  //background(backgroundCover); 
+  imageMode(CENTER);
   
   mainTransform(); 
-  //println("length: x: " + mouseX + " y: " + mouseY);
+  
   // calling the customized function collage 
   
   if(frameCount == 7500){
