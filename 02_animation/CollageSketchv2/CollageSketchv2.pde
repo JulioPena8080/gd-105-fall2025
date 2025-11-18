@@ -1,5 +1,7 @@
 color backgroundCover = lerpColor(#00ff00, #ff00ff, 0.6); 
 
+float rL = 0.003;
+float r = random(0.000, 0.009);
 
 // Vectors for transformations
 PVector cardss = new PVector(-243, -110);
@@ -45,40 +47,68 @@ void setup() {
   seed = loadImage("seed.png");
   hall = loadImage("hall.png");
   deli = loadImage("deli.png");
-  ravioli = loadImage("ravioli.png");
+  ravioli = loadImage("6.png");
   boat = loadImage("boat.png");
 
 }
 
 
 void badImages(){
-   scale(0.9);
+   scale(1.4);
    translate(cardss.x, cardss.y);
    image(cards, 0, 0); // resize
+   
+   rotate(radians(90) * (frameCount * 0.003));
+   rotate(radians(180) * (frameCount * 0.003));
+   rotate(radians(270) * (frameCount * 0.003));
+
    
    translate(bags.x, bags.y);
    image(bag, 0, 0); // resize
    
+   rotate(radians(90) * (frameCount * 0.003));
+   rotate(radians(180) * (frameCount * 0.003));
+   rotate(radians(270) * (frameCount * 0.003));
+
+   
    translate(backpacks.x, backpacks.y);
    image(backpack, 0, 0); // resize
+   
+   rotate(radians(2) * cos(frameCount * rL * r));
    
    translate(fires.x, fires.y);
    image(fire, 0, 0); // resize
    
+   rotate(radians(90) * cos(frameCount * rL));
+   
    translate(boats.x, boats.y);
    image(boat, 0, 0); // resize
+   
+   
+   rotate(radians(15) * cos(frameCount * rL)); 
+
    
    translate(exits.x, exits.y);
    image(exit, 0, 0);
    
+   rotate(radians(5) * cos(frameCount * rL)); 
+   rotate(radians(90) * (frameCount * 0.001));
+   rotate(radians(180) * (frameCount * 0.003));
+   rotate(radians(270) * (frameCount * 0.003));
+
+   
    translate(bendis.x, bendis.y);
    image(bendi, 0, 0);
-  
+   
+   rotate(radians(15) * (frameCount * 0.003)); 
+
+
+   rotate(radians(90) * (frameCount * 0.003));
+   rotate(radians(180) * (frameCount * 0.003));
+   rotate(radians(270) * (frameCount * 0.003));
+
    translate(laptops.x, laptops.y);
    image(laptop, 0, 0);
-   
-   translate(138, -116);
-   image(ravioli, 0, 0);
    
 
 
@@ -102,13 +132,22 @@ void goodImages(){
   translate(seeds.x, seeds.y);
   image(seed, 0, 0);
   
-  rotate(radians(90) * (frameCount * 0.03));
-
+  rotate(radians(15) * (frameCount * rL+0.001));
+  
+  translate(149, 1619);
+  image(ravioli, 0, 0);
+  
+  rotate(radians(5) / (frameCount * rL));
+  if(rL > 0.0000){
+    rotate(radians(5) * (frameCount * rL));
+  }
   
   translate(halls.x, halls.y);
   image(hall, 0, 0);
   
-  rotate(radians(90) * (frameCount * 0.03));
+  rotate(radians(90) * (frameCount * 0.003));
+  rotate(radians(180) * (frameCount * 0.003));
+  rotate(radians(270) * (frameCount * 0.003));
 
   translate(delis.x, delis.y);
   image(deli, 0, 0);
@@ -120,24 +159,27 @@ void goodImages(){
 void mainTransform(){   
     
     translate(width/2, height/2);
-    scale( 0.3 );
-    imageMode(CENTER);
-    badImages();
-    //rotate(TAU * (frameCount * 0.00031)); 
-    goodImages();
     
+    scale( 0.33 );
+    imageMode(CENTER);
+    
+    badImages();
+    //rotate(radians(15) * (frameCount * 0.00031)); 
+    goodImages();
+   
   }
-void draw() {
+void draw() {frameRate(60);
   //background(backgroundCover); 
   imageMode(CENTER);
-  
+
   mainTransform(); 
-  
+
   // calling the customized function collage 
   
   if(frameCount == 7500){
     saveFrame("lastFrame####.png");
-    println("saved!");  
+    println("saved!"); 
+    noLoop();
   }
   
 }
