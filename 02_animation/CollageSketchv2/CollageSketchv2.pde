@@ -47,7 +47,7 @@ void setup() {
   seed = loadImage("seed.png");
   hall = loadImage("hall.png");
   deli = loadImage("deli.png");
-  ravioli = loadImage("6.png");
+  ravioli = loadImage("ravioli.png");
   boat = loadImage("boat.png");
 
 }

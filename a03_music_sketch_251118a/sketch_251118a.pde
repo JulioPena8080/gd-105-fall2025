@@ -1,7 +1,9 @@
 // step sequencer program 
 
+
 //background Color in an array
-color[] bgColor = {25, 125, 225};
+color bgColor = lerpColor(25, 125, 225);
+
 // distance away from each circle
 int d = 6;
 // quanttity of circles per channel
@@ -9,9 +11,30 @@ int q = 8;
 // the X axis 
 int x = 50;
 
+
+// Vector(s = start, e = end);
+PVector s = new PVector(50, 50);
+PVector e = new PVector(125, 25);
+
+// all functions goes under this comment
+
+
+
+void labelBackground(){ // assign values to variablzes and a cursor condition to start creating user interactions
+
+  rect(s.x, s.y, e.x, e.y);
+
+}
+
+void mousePressed(){
+  
+}
+
+// above construction
+
 void changeInterface(){
     fill(#3a0f9a);
-    rect(50, 50, 125, 25);
+    labelBackground();
     fill(255);
     text("Oscillators", 90, 65);
 }
@@ -64,7 +87,7 @@ void circles(){ // require 4 channels
 
 void setup(){
     size(1000, 600);
-    background(bgColor[0], bgColor[1], bgColor[2]);
+    background(bgColor);
     label();
 }
 
