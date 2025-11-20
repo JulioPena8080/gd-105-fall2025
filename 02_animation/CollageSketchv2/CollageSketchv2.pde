@@ -49,9 +49,22 @@ void setup() {
   deli = loadImage("deli.png");
   ravioli = loadImage("ravioli.png");
   boat = loadImage("boat.png");
+  
 
 }
 
+// notes
+
+
+// declare stuff
+// initialize stuff
+// call function
+
+//void spinnyImage(PImage img, PVector location, float pctTurt){
+//    translate();
+//    rotate();
+//    image();
+//}
 
 void badImages(){
    scale(1.4);
