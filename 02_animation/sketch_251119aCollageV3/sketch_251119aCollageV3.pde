@@ -1,7 +1,7 @@
 color backgroundCover = #ff00ff;
 
 // declare stuff
-PImage card, exit, box, nintendo, bendi, laptop, bag, bendy, backpack, table, fire, seed, hall, deli, julio, boat;
+PImage card, exit, box, nintendo, bendi, laptop, bag, bendy, backpack, table, fire, seed, hall, deli, julio, boat, bg, bg2;
 
 PVector cardVector = new PVector(0, 0);
 PVector exitVector = new PVector(0, 0);
@@ -55,6 +55,8 @@ void setup(){
   deli = loadImage("deli.png");
   julio = loadImage("julio.png");
   boat = loadImage("boat.png");
+  bg = loadImage("GIF_snap.png");
+  bg2 = loadImage("lastFrame.png");
   
 }
 
@@ -153,6 +155,7 @@ void fires(PImage fire, PVector fireVector){
 }
 
 void seeds(PImage seed, PVector seedVector){
+  
   rotate(sin(frameCount * 0.009) * cos(TAU / 0.4));
   scale(1.05);
   translate(seedVector.x+413, seedVector.y+-1985);
@@ -160,6 +163,7 @@ void seeds(PImage seed, PVector seedVector){
 }
 
 void halls(PImage hall, PVector hallVector){
+  
   hallVector.y -= hallSpeed;
   if(hallVector.y <= -20){
     hallSpeed *= -1;
@@ -198,10 +202,7 @@ void boats(PImage boat, PVector boatVector){
   if(boatVector.x >= 10){
     boatSpeed *= -1;
   }
-  
-  
-  
-  //println("frame: " + frameCount);
+
   scale(15.11);
   translate(boatVector.x+465, boatVector.y+318);
   image(boat, boatVector.x+100, boatVector.y-1);
@@ -227,7 +228,6 @@ void collage(){
                // random(2, 2.1);
 
   scale(0.045);
-  //rotate(sin(frameCount * 0.009) * cos(TAU / 0.4));
 
   cards(card, cardVector);
   exits(exit, exitVector);
@@ -248,31 +248,24 @@ void collage(){
 }
 
 void draw(){
-  
-  //background(#ff00ff);
-  background(0);
+
+  background(bg); // Prefer backgrounds available: #ff00ff, bg, (bg2, //require height at 700);
   pushMatrix();
   
   // collage function 
   collage();
-  boats(boat, boatVector);// must leave boat here!
+  boats(boat, boatVector); // must leave boat here! or will face the eternal dungeon of dragons
 
   popMatrix();
   resetMatrix();
-  //println("frame: " + frameCount);
-  //if(frameCount == 1){
-  
-  //  save("GIF_Start.png");
-  //  println("Saved Start!");
-    
-  //}
+
   if(frameCount > 0){
   
-    saveFrame("GIF_####.png");
+    saveFrame("####_GIF.png");
     println("frame: " + frameCount);
     
   }
-  if(frameCount == 1000){
+  if(frameCount == 50){
     //saveFrame("GIF_####.png");
     
     noLoop();
