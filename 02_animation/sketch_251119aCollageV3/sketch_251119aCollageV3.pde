@@ -91,7 +91,6 @@ void nintendos(PImage nintendo, PVector nintendoVector){
   if(nintendoVector.x <= -1000){
     nintendoSpeed += 1;
   }
-  println("distance: " + nintendoVector.x);
   scale(1.76);
   translate(nintendoVector.x+1285, nintendoVector.y+1197);
   image(nintendo, nintendoVector.x+302, nintendoVector.y+692);
@@ -108,7 +107,7 @@ void bendis(PImage bendi, PVector bendiVector){
   //println("distance: " + bendiVector.x);
   scale(13.51);
   translate(bendiVector.x+-56, bendiVector.y+-280);
-  image(bendi, bendiVector.x+8, bendiVector.y+-10);
+  image(bendi, bendiVector.x+600+random(0, 15), bendiVector.y+400+random(0, 15));
 }
 
 void laptops(PImage laptop, PVector laptopVector){
@@ -249,7 +248,7 @@ void collage(){
 }
 
 void draw(){
-  frameRate(60);
+  
   //background(#ff00ff);
   background(0);
   pushMatrix();
@@ -260,15 +259,23 @@ void draw(){
 
   popMatrix();
   resetMatrix();
-  println("frame: " + frameCount);
-  if(frameCount == 100000000){
+  //println("frame: " + frameCount);
+  //if(frameCount == 1){
   
-    save("GIF.png");
-    print("         Saved!");
+  //  save("GIF_Start.png");
+  //  println("Saved Start!");
+    
+  //}
+  if(frameCount > 0){
+  
+    saveFrame("GIF_####.png");
+    println("frame: " + frameCount);
     
   }
-  if(frameCount == 305000000){
-    save("GIF.png");
-    print("         Saved! at 30,000");
+  if(frameCount == 1000){
+    //saveFrame("GIF_####.png");
+    
+    noLoop();
+    println("Saved!");
   }
 }
