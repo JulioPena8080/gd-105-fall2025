@@ -259,16 +259,16 @@ void draw(){
   popMatrix();
   resetMatrix();
 
-  if(frameCount > 0){
+  //if(frameCount > 0){
   
-    saveFrame("####_GIF.png");
-    println("frame: " + frameCount);
+  //  saveFrame("####_GIF.png");
+  //  println("frame: " + frameCount);
     
-  }
-  if(frameCount == 50){
-    //saveFrame("GIF_####.png");
+  //}
+  //if(frameCount == 50){
+  //  //saveFrame("GIF_####.png");
     
-    noLoop();
-    println("Saved!");
-  }
+  //  noLoop();
+  //  println("Saved!");
+  //}
 }

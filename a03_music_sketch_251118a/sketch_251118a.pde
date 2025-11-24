@@ -38,14 +38,14 @@ Amplitude ampLaser, ampBGM;
 void modulesFx(){
 
     // preping assets
-    laser = new SoundFile(this, ".wav");
-    bgm = new SoundFile(this, ".wav");
+    //laser = new SoundFile(this, ".wav");
+    //bgm = new SoundFile(this, ".wav");
     
-    ampLaser = new Amplitude(this);
-    ampLaser.input(laser);
+    //ampLaser = new Amplitude(this);
+    //ampLaser.input(laser);
     
-    ampBGM = new Amplitude(this);
-    ampBGM.input(bgm);
+    //ampBGM = new Amplitude(this);
+    //ampBGM.input(bgm);
     
     saw = new SawOsc(this);
     saw.freq(200);
