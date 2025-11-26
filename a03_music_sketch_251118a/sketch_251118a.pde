@@ -6,11 +6,11 @@ import processing.sound.*;
 color bgColor = lerpColor(25, 125, 225);
 
 // distance away from each circle
-int d = 6;
+int distance = 6;
 // quanttity of circles per step
-int q = 8;
+int quantity = 8;
 // the X axis 
-int x = 50;
+int horizontalXaxis = 50;
 
 
 // Vector(s = start, e = end);
@@ -43,11 +43,40 @@ AllPass allPass;
 // Amplitude ampLaser, ampBGM;
 void mouseVector(PVector lineS, PVector lineE){
   
+  
   line(lineS.x, lineS.y, lineE.x, lineE.y);
   
 }
 
-void modulesFx(){
+boolean activeSound;
+
+void modulesFx(boolean activeSound){
+    fill(0);
+    text("PRESS SPACE TO START OSCILLATOR", width/2, height/2.5);
+    activeSound = false;
+    
+    if(keyPressed&&key==' '){
+      
+      activeSound = true;
+    }
+    if(keyPressed&&key=='o'){
+      saw.stop();
+    }
+    if(activeSound==true){
+      saw = new SawOsc(this);
+      saw.freq(200);
+      
+      // filter
+      allPass = new AllPass(this);
+      // play sound wave
+      saw.play();
+      // volume adjustment
+      saw.amp(0.3);
+      
+      // start the saw wave and pushes the allPass filter
+      allPass.process(saw);
+    }
+
 
     // preping assets
     //laser = new SoundFile(this, ".wav");
@@ -58,17 +87,6 @@ void modulesFx(){
     
     //ampBGM = new Amplitude(this);
     //ampBGM.input(bgm);
-  
-    
-    saw = new SawOsc(this);
-    saw.freq(200);
-    
-    allPass = new AllPass(this);
-    
-    // start the saw wave and pushes the allPass
-    saw.play();
-    saw.amp(0.5);
-    allPass.process(saw);
 }
 
 void labelBackground(){ // assign values to variablzes and a cursor condition to start creating user interactions
@@ -98,8 +116,6 @@ void channelSelection(){ // selection for each channel "from 1 to 4"
     text("1", 373, 140);
     
 }
-
-
 void label(){
     scale(2);
     fill(0);
@@ -115,19 +131,20 @@ void trackers(){
     
 }
 
-void circles(){ // require 4 channels
-   
+void stepSequenceCircles(){ // require 4 channels
+     
+    
     // channel iteration for circles
-    for(int i=0; i<q; i++){ 
+    for(int i=0; i<quantity; i++){ 
         
         fill(175, 175, 175); // set circles grey
-        circle(x, 150, 25); // integer X in the width increase by iteration 
-        q-=1; // and subtractiong 1 from quantity
-        for(int e=0; e<d; e++){
+        circle(horizontalXaxis, 150, 25); // integer X in the width increase by iteration 
+        quantity-=1; // and subtractiong 1 from quantity
+        for(int e=0; e<distance; e++){
             // adds distance between circles
-            x+=d; 
+            horizontalXaxis+=distance; 
             // stop loop from iterating
-            if(x>width&&x>=q){
+            if(horizontalXaxis>width&&horizontalXaxis>=quantity){
               break;
             }
         }
@@ -152,9 +169,9 @@ void draw(){
   
   changeInterface();
   channelSelection();
-  circles();
+  stepSequenceCircles();
   trackers();
-  modulesFx();
+  modulesFx(activeSound);
   mouseVector(lineS, lineE);
 
   
