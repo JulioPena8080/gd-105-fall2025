@@ -26,6 +26,7 @@ float hallSpeed = 0.7;
 float deliSpeed = 0.5;
 float boatSpeed = 0.2;
 float bendiSpeed = 0.1;
+float jiggetFx = random(0, 50);
 
 
 // set up canvas 
@@ -60,12 +61,21 @@ void setup(){
   
 }
 
+
+// DO NOT USE DUPLICATED BLOCKS 
+//
+// void function(PImage img, PVector imgVector, float jiggetFx){
+//   
+//   image(img, imgVector.x, imgVector.y, jiggetFx); 
+// 
+// }
+
 // call customized functions
-void cards(PImage card, PVector cardVector){ 
-  
+void cards(PImage card, PVector cardVector, float jiggetFx){ 
+  jiggetFx = random(0, 50);
   scale(13.18);
   translate(cardVector.x, cardVector.y);
-  image(card, cardVector.x, cardVector.y);
+  image(card, cardVector.x+jiggetFx, cardVector.y+jiggetFx);
 }
 
 void exits(PImage exit, PVector exits){ 
@@ -229,7 +239,7 @@ void collage(){
 
   scale(0.045);
 
-  cards(card, cardVector);
+  cards(card, cardVector, jiggetFx);
   exits(exit, exitVector);
   boxs(box, boxVector);
   nintendos(nintendo, nintendoVector);
@@ -249,7 +259,7 @@ void collage(){
 
 void draw(){
 
-  background(bg); // Prefer backgrounds available: #ff00ff, bg, (bg2, //require height at 700);
+  image(bg, width/2, height/2); // Prefer backgrounds available: #ff00ff, bg, (bg2, //require height at 700);
   pushMatrix();
   
   // collage function 

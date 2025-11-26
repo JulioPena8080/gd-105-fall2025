@@ -17,6 +17,10 @@ int x = 50;
 PVector s = new PVector(50, 50);
 PVector e = new PVector(125, 25);
 
+// Cursor lines 
+PVector lineS = new PVector(0, width);
+PVector lineE = new PVector(0, height);
+
 // Array for Oscillators
 
 
@@ -25,15 +29,23 @@ PVector e = new PVector(125, 25);
 // all functions goes under this comment
 
 
-// Sound wavelength 'saw' with all pass filter
+// Sound wavelength with all pass filter
 SawOsc saw;
+//SqrOsc sqr;
+
+ 
 AllPass allPass;
 // sets a volume length
-SoundFile laser;
-SoundFile bgm;
+// SoundFile laser;
+// SoundFile bgm;
 
-// an amplitude object let us monitor the volume 
-Amplitude ampLaser, ampBGM;
+//// an amplitude object let us monitor the volume 
+// Amplitude ampLaser, ampBGM;
+void mouseVector(PVector lineS, PVector lineE){
+  
+  line(lineS.x, lineS.y, lineE.x, lineE.y);
+  
+}
 
 void modulesFx(){
 
@@ -46,19 +58,17 @@ void modulesFx(){
     
     //ampBGM = new Amplitude(this);
     //ampBGM.input(bgm);
+  
     
     saw = new SawOsc(this);
     saw.freq(200);
+    
     allPass = new AllPass(this);
     
     // start the saw wave and pushes the allPass
     saw.play();
+    saw.amp(0.5);
     allPass.process(saw);
-    
-}
-
-void viewOscillator(){
-  
 }
 
 void labelBackground(){ // assign values to variablzes and a cursor condition to start creating user interactions
@@ -67,8 +77,8 @@ void labelBackground(){ // assign values to variablzes and a cursor condition to
 
 }
 
-void mousePressed(){
-  
+void keyPressed(){
+
 }
 
 // above construction
@@ -98,6 +108,7 @@ void label(){
 
 void trackers(){
      // display rect under each circle 
+     //background(bgColor);
      fill(112);
      rect(35, 169, 27, 8); // tracking channels background
      
@@ -130,7 +141,7 @@ void setup(){
     size(1000, 600);
     background(bgColor);
     label();
-    modulesFx();
+    
 }
 
 
@@ -138,15 +149,13 @@ void setup(){
 // static and active sketches
 
 void draw(){
-    
-  float g = map(mouseX, 0, width, 0, 1);
-  allPass.gain(g);
-  background(g * 255, 0, 0);
   
   changeInterface();
   channelSelection();
   circles();
   trackers();
+  modulesFx();
+  mouseVector(lineS, lineE);
 
-
+  
 }
