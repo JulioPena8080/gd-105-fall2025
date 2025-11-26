@@ -173,6 +173,8 @@ void draw(){
   trackers();
   modulesFx(activeSound);
   mouseVector(lineS, lineE);
-
+  if(frameCount == 20){
+    save("Step Sequencer.png");
+  }
   
 }
