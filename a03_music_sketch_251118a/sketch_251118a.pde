@@ -52,7 +52,7 @@ boolean activeSound;
 
 void modulesFx(boolean activeSound){
     fill(0);
-    text("PRESS SPACE TO START OSCILLATOR", width/2, height/2.5);
+    text("PRESS SPACE TO START OSCILLATOR, PRESS ' O ' TO STOP", width/2, height/2.5);
     activeSound = false;
     
     if(keyPressed&&key==' '){
