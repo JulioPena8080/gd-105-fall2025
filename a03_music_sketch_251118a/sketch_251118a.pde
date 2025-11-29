@@ -10,16 +10,11 @@ int distance = 6;
 // quanttity of circles per step
 int quantity = 8;
 // the X axis 
-int horizontalXaxis = 50;
-int verticalYaxis = 150;
+
 
 // Vector(s = start, e = end);
 PVector s = new PVector(50, 50);
 PVector e = new PVector(125, 25);
-
-// Cursor lines 
-PVector lineS = new PVector(0, width);
-PVector lineE = new PVector(0, height);
 
 // all functions goes under this comment
 
@@ -48,9 +43,32 @@ boolean hoverMouse = false;
 float mouseXposition = mouseX;
 float mouseYposition = mouseY;
 
-int circlePositionX = horizontalXaxis;
-int circlePositionY = verticalYaxis;
-int size_OfShapeInSpace = 25;
+float horizontalXaxis = 50.0;
+float verticalYaxis = 150.0;
+
+float circlePositionX = horizontalXaxis;
+float circlePositionY = verticalYaxis;
+float size_OfShapeInSpace = 25;
+
+void stepButtonCircle(float circlePositionX, float circlePositionY, float size_OfShapeInSpace){
+    
+
+  
+  // mouse collision
+  float mousePositionX = mouseX;
+  float mousePositionY = mouseY;
+  float mouseDistance = dist(mousePositionX, mousePositionY, circlePositionX, circlePositionY);
+  
+  boolean hover = mouseDistance <= size_OfShapeInSpace/25.0; 
+  
+  if(hover){
+    fill(color(200, 20, 100));
+    circle(circlePositionX, circlePositionY, size_OfShapeInSpace-50);
+  }
+  
+  point(mouseX, mouseY);
+  
+}
 
 void modulesFx(boolean activeSoundSawOsc){
     fill(0);
@@ -113,28 +131,60 @@ void label(){
     text("Step Sequencer", 100, 100);
 }
 
+float trackerXaxis = 35.0;
+float trackerYaxis = 169.0;
+float tackerStepVelocity = 0.5;
+
+float stepPerStack = 8.0;
+
+
+PVector trackerVector = new PVector(trackerXaxis, trackerYaxis);
+boolean stepSequenceStarted = true;
+
 void trackers(){
+     
      // display rect under each circle 
-     //background(bgColor);
-     fill(112);
-     rect(35, 169, 27, 8); // tracking channels background
+     
+      if(stepSequenceStarted){
+       
+       
+         for(int i=0; i<stepPerStack; i++){
+            // increase tracker position and set a new background
+            //background(bgColor);
+            trackerVector.x+=distance;
+            
+            fill(255);
+            rect(trackerVector.x, trackerVector.y, 27, 8);
+  
+            
+         }
+     }
+ // tracking channels background
 }
 
+color stepButtonBackground = color(255);
+boolean newCircleIsReal = false;
+PVector circleVector = new PVector(horizontalXaxis, verticalYaxis);
+
 void stepSequenceCircles(){ // require 4 channels
-     
+
   // channel iteration for circles
  for(int i=0; i<quantity; i++){ 
-      
-  fill(175, 175, 175); // set circles grey
-  circle(horizontalXaxis, verticalYaxis, size_OfShapeInSpace); // the variable 'horizontalXaxis' increase by less than quantity 
+
+  fill(stepButtonBackground); // set circles grey
+  circle(circleVector.x, circleVector.y, size_OfShapeInSpace); // the variable 'horizontalXaxis' increase by less than quantity 
   quantity-=1; // and subtractiong 1 from quantity
+
   for(int e=0; e<distance; e++){
      // adds distance between circles
-     horizontalXaxis+=distance; 
+     circleVector.x+=distance; 
+       newCircleIsReal = true;
      // stop loop from iterating 
-     if(horizontalXaxis>width&&horizontalXaxis>=quantity){
+     if(circleVector.x>width&&circleVector.x>=quantity){
         break;
       }
+     noLoop();
+     
     }
   }
 }
@@ -156,11 +206,7 @@ void draw(){
   channelSelection();
   stepSequenceCircles();
   trackers();
-  modulesFx(activeSoundSawOsc);
-  
-  stroke(#00ff00);
-  line(lineS.x, lineS.y, lineE.x, lineE.y);
-  
+  modulesFx(activeSoundSawOsc);  
   if(frameCount == 20){
     save("Step Sequencer.png");
   }
