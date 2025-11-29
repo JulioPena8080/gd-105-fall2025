@@ -81,5 +81,8 @@ void mouseReleased(){
 void draw(){
   background(0);
   circleUI(horizon, vertica, radious);
+  if(frameCount==20){
+    save("sampleButton.png");
+  }
   
 }
