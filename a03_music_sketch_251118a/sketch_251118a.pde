@@ -11,7 +11,7 @@ int distance = 6;
 int quantity = 8;
 // the X axis 
 int horizontalXaxis = 50;
-
+int verticalYaxis = 150;
 
 // Vector(s = start, e = end);
 PVector s = new PVector(50, 50);
@@ -21,11 +21,6 @@ PVector e = new PVector(125, 25);
 PVector lineS = new PVector(0, width);
 PVector lineE = new PVector(0, height);
 
-// Array for Oscillators
-
-
-
- 
 // all functions goes under this comment
 
 
@@ -41,28 +36,34 @@ AllPass allPass;
 
 //// an amplitude object let us monitor the volume 
 // Amplitude ampLaser, ampBGM;
-void mouseVector(PVector lineS, PVector lineE){
-  
-  
-  line(lineS.x, lineS.y, lineE.x, lineE.y);
-  
-}
 
-boolean activeSound;
+// sound wave types
+boolean activeSoundSawOsc;
+boolean activeSoundSqrOsc;
+boolean activeSoundTriangleOsc;
 
-void modulesFx(boolean activeSound){
+// hover over stuff
+boolean hoverMouse = false;
+
+float mouseXposition = mouseX;
+float mouseYposition = mouseY;
+
+int circlePositionX = horizontalXaxis;
+int circlePositionY = verticalYaxis;
+int size_OfShapeInSpace = 25;
+
+void modulesFx(boolean activeSoundSawOsc){
     fill(0);
     text("PRESS SPACE TO START OSCILLATOR, PRESS ' O ' TO STOP", width/2, height/2.5);
-    activeSound = false;
+    activeSoundSawOsc = false;
     
     if(keyPressed&&key==' '){
-      
-      activeSound = true;
+      activeSoundSawOsc = true;
     }
     if(keyPressed&&key=='o'){
       saw.stop();
     }
-    if(activeSound==true){
+    if(activeSoundSawOsc==true){
       saw = new SawOsc(this);
       saw.freq(200);
       
@@ -89,21 +90,11 @@ void modulesFx(boolean activeSound){
     //ampBGM.input(bgm);
 }
 
-void labelBackground(){ // assign values to variablzes and a cursor condition to start creating user interactions
-
-  rect(s.x, s.y, e.x, e.y);
-
-}
-
-void keyPressed(){
-
-}
-
 // above construction
 
 void changeInterface(){
     fill(#3a0f9a);
-    labelBackground();
+    rect(s.x, s.y, e.x, e.y);
     fill(255);
     text("Oscillators", 90, 65);
 }
@@ -127,42 +118,36 @@ void trackers(){
      //background(bgColor);
      fill(112);
      rect(35, 169, 27, 8); // tracking channels background
-     
-    
 }
 
 void stepSequenceCircles(){ // require 4 channels
      
-    
-    // channel iteration for circles
-    for(int i=0; i<quantity; i++){ 
-        
-        fill(175, 175, 175); // set circles grey
-        circle(horizontalXaxis, 150, 25); // integer X in the width increase by iteration 
-        quantity-=1; // and subtractiong 1 from quantity
-        for(int e=0; e<distance; e++){
-            // adds distance between circles
-            horizontalXaxis+=distance; 
-            // stop loop from iterating
-            if(horizontalXaxis>width&&horizontalXaxis>=quantity){
-              break;
-            }
-        }
+  // channel iteration for circles
+ for(int i=0; i<quantity; i++){ 
+      
+  fill(175, 175, 175); // set circles grey
+  circle(horizontalXaxis, verticalYaxis, size_OfShapeInSpace); // the variable 'horizontalXaxis' increase by less than quantity 
+  quantity-=1; // and subtractiong 1 from quantity
+  for(int e=0; e<distance; e++){
+     // adds distance between circles
+     horizontalXaxis+=distance; 
+     // stop loop from iterating 
+     if(horizontalXaxis>width&&horizontalXaxis>=quantity){
+        break;
+      }
     }
+  }
 }
 
 
 // layout for the instruments of user interactions
 
 void setup(){
-    size(1000, 600);
-    background(bgColor);
-    label();
-    
+  size(1000, 600);
+  background(bgColor);
+  label();
+  
 }
-
-
-
 // static and active sketches
 
 void draw(){
@@ -171,8 +156,11 @@ void draw(){
   channelSelection();
   stepSequenceCircles();
   trackers();
-  modulesFx(activeSound);
-  mouseVector(lineS, lineE);
+  modulesFx(activeSoundSawOsc);
+  
+  stroke(#00ff00);
+  line(lineS.x, lineS.y, lineE.x, lineE.y);
+  
   if(frameCount == 20){
     save("Step Sequencer.png");
   }
