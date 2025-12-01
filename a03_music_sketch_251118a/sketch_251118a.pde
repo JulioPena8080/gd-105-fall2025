@@ -183,7 +183,7 @@ void stepSequenceCircles(int quantity, int distance){ // require 4 channels
 
   // channel iteration for circles
  for(int i=0; i<quantity; i++){ frameRate(1);
-
+  
   fill(stepButtonBackground); // set circles grey
   circle(circleVector.x, circleVector.y, size_OfShapeInSpace); // the variable 'horizontalXaxis' increase by less than quantity 
   quantity-=1; // and subtractiong 1 from quantity
@@ -201,6 +201,10 @@ void stepSequenceCircles(int quantity, int distance){ // require 4 channels
     for(int e=0; e<distance; e++){
        // adds distance between circles
        circleVector.x+=distance;
+       noFill();
+       
+       circle(circlePositionX, circlePositionY, size_OfShapeInSpace);
+  
          
     }
 
@@ -223,6 +227,7 @@ void trackers(){
         trackerRectPosition();
         changeInterface();
         channelSelection();
+        
      }
   }
 }
