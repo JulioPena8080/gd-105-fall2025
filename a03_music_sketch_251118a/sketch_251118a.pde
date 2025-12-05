@@ -175,6 +175,12 @@ color stepButtonBackground = color(255);
 boolean newCircleIsReal = false;
 PVector circleVector = new PVector(horizontalXaxis, verticalYaxis);
 
+//void constructor(){
+//  // METHOD TO DISPLAY CIRCLES
+//  // 1 
+//  // 2
+//}
+
 void stepSequenceCircles(int quantity, int distance) { // require 4 channels
 
   // channel iteration for circles
@@ -202,7 +208,7 @@ void trackers() {
     for (int i=0; i<4; i++) { // idk what to put there yet i been thinking about it but is foggy
     
       // increase tracker position and set a new background
-      //background(bgColor);
+      background(bgColor);
       frameRate(1);
       // calling for update
       trackerVector.x+=distance;
@@ -234,6 +240,8 @@ void mouseClicked() {
   changeColor();
   circle(circlePositionX, circlePositionY, size_OfShapeInRadious);
 }
+
+
 
 //void draw(){
 
