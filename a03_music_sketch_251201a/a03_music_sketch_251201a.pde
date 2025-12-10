@@ -4,7 +4,7 @@
 
 int a;
 float b;
-PVector
+//PVector 
 color
 
 // 1) booleans
@@ -18,11 +18,12 @@ int a[] = new a();
 
 // 3) conditions
 
-while(running){
+while(running==true){
   // some code 
 } do {
     // instructions to execute
 }
+
 
 if(toggle){
   // do stuff
@@ -30,8 +31,7 @@ if(toggle){
 // custom functions
 
 // 1) channels
-// 2) buttons
-// 3) specialFX
+// 2) specialFX
 
 // set up
 void setup(){
