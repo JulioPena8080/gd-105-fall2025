@@ -30,6 +30,13 @@ class Controllers {
       pV.x+=vel+random(0.0, 0.3);
       o.coinScore+=random(0.0, 0.3);
     }
+              
+    if(keyPressed&&key==' '){
+      background(0, 155, 0);
+      fill(255);
+      text("current amount: " + o.coinScore, width/2, height/2);
+        
+    }
     //println("[Controllers] player movement: " + pV.x, pV.y);
   }
 }
