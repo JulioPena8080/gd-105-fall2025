@@ -4,37 +4,37 @@
 void setup(){
   // size
   size(500, 500);
+  background(0);
   // load images
 }
 
 // display images in screen
-void draw(){ //frameRate(1);
+void draw(){ 
+  //frameRate(1);
   //background(0);
   // allocatation
-  
-  // allocating class "Player" to 'p'
+  //text("[Controllers] player movement: " + pV.x + " " + pV.y, 0, 0);
+  //text("[Coin] location in the screen" + cV.x + " " + cV.y, width/2, height/2);
+
+  // allocating classes
   Player p = new Player();
   Controllers c = new Controllers();
   Coin o = new Coin();
-  GameState g = new GameState();
   Setting s = new Setting();
-  
+  // player colliding with object
   s.hover();
-  
   // player class to display in screen
-  p.sqr();
-  p.pCollision();
-    
-  // controller class to move player inside canvas
-  c.keyPressed();
-  
+  p.playerColor(p.playerSize, p.playerColorOriginal, p.playerColorChange);
+  // player offset rules
+  p.playerCollision();
+  // payment for the player new outfit
+  p.payCoin();
+  // controller class to move player in screen
+  c.playerControl();
   // coin class to spawn coins
   o.coinSpawn();
+  // display score in the screen
   o.coinScore();
-
-  // end the game at 100 frames
-  g.endGame();
-
-  
-
-}
+  // end game 
+  s.endGame();
+} 
