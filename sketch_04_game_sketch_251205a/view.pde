@@ -23,18 +23,18 @@ void draw(){
   Setting s = new Setting();
   // player colliding with object
   s.hover();
+  // display score in the screen
+  o.coinScore();
+  // coin class to spawn coins
+  o.coinSpawn();
   // player class to display in screen
   p.playerColor(p.playerSize, p.playerColorOriginal, p.playerColorChange);
   // player offset rules
-  p.playerCollision();
-  // payment for the player new outfit
-  p.payCoin();
+  c.playerCollision();
   // controller class to move player in screen
   c.playerControl();
-  // coin class to spawn coins
-  o.coinSpawn();
-  // display score in the screen
-  o.coinScore();
+
+
   // end game 
   s.endGame();
 } 

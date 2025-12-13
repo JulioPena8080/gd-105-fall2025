@@ -8,7 +8,7 @@ PVector cV = new PVector(random(0, 450), random(0, 450));
 PVector tV = new PVector(400, 50);
 // text title
 //PVector textTitle = new PVector(width/2, height/2);
-
+  
 class Controllers {
   //allocation
   Coin o = new Coin();
@@ -17,10 +17,10 @@ class Controllers {
   float vel = 9.5;
   void playerCollision(){
     // player collision for offset left and bottom
-    if(pV.x>width-100){
+    if(pV.x>width-50){
        pV.x-=vel;
     }
-    if(pV.y>height-100){
+    if(pV.y>height-50){
        pV.y-=vel;
     }
     if(pV.x<0){
@@ -30,11 +30,9 @@ class Controllers {
       pV.y+=vel;
     }
   }
-  
-  // methods
   void playerControl(){
     // keys
-      
+ 
     // depending on the pressed key player will move 
     if(keyPressed&&key=='w'){
       // up motion

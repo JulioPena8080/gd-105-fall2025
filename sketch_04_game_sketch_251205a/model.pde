@@ -12,7 +12,7 @@ class Coin {
   // score board variable
   float coinScore = 0.0; 
     // coin value
-  float rValue = 10.5 + coinScore;
+  float rValue = 10.5 * frameCount;
   // ensure coins saved
   boolean coined;
   
@@ -33,54 +33,50 @@ class Coin {
 }
 
 class Player {
-  Controllers c = new Controllers();
   Coin o = new Coin();
   // variables
   float playerSize = 50.0;
   color playerColorOriginal = #ffffff;
-  color playerColorchange;
+  color playerColorChange;
+  
+  // pay for change
+  boolean paid;
+  float changeCost = 1600.500;
   // methods
   void playerColor(float playerSize, color playerColorOriginal, color playerColorChange){
     // square with vector
     fill(playerColorOriginal);
-    if(paid==true){
-         playerColorChange = color(random(0, 255), random(0, 255), random(0, 255));
-         playerSize = random(49.9, 101.1);
-         playerColor(playerSize, playerColorOriginal, playerColorChange);
+    if(paid==true&&keyPressed&&key=='p'){
+       playerColorChange = color(random(0, 255), random(0, 255), random(0, 255));
+       playerColorOriginal = playerColorChange;
+       playerSize = random(49.9, 101.1);
+       playerColor(playerSize, playerColorOriginal, playerColorChange);
+    } 
+    if(o.coinScore<changeCost){
+      paid=false;
     }
+    if(paid==false&&o.coinScore>100000){
+      //background(0);
+      fill(255);
+      text("Game Over", width/2, height/2);
+    } 
     strokeWeight(6);
     square(pV.x, pV.y, playerSize); 
   }
-  // pay for change
-  boolean paid;
-  float changeCost = 5600.500;
-  void payCoin(){
-    
-      if(o.coinScore>=changeCost&&keyPressed&&key=='p'){
-        o.coinScore-=changeCost;
-        paid=true;
-      }
-      if(o.coinScore<changeCost){
-        paid=false;
-      }
-      if(paid==false){
-         background(0);
-         fill(255);
-         text("CANT AFFORT IT, TRY AGAIN LATER", width/2, height/2);
-       }   
-    }
-  }
-
 }
 
 class Setting{
+  Player p = new Player();
   Coin o = new Coin();
   boolean collected;
   void hover(){  
+    Controllers c = new Controllers();
+    Coin o = new Coin();
     if(o.hover){
       // is hovering
       //background(0);
-      o.coinScore += o.rValue * frameCount; 
+      c.vel+=-3.5;
+      o.coinScore += o.rValue; 
       collected=true;
       cV.x=random(0, 390);
       cV.y=random(25, 450);
@@ -88,6 +84,10 @@ class Setting{
       square(400, 25, o.bgSqr);
       fill(#00eebb);
       text("Coins: " + o.coinScore, tV.x, tV.y);
+      if(o.coinScore>p.changeCost){
+        o.coinScore-=p.changeCost;
+        p.paid=true;
+      } // currently unable to have a purchase mechanic  
      }
      float scoreLimit = 100500.0;
      if(o.coinScore>scoreLimit){
