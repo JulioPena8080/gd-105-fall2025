@@ -5,7 +5,7 @@ PVector pV = new PVector(random(0, 450), random(0, 450));
 // Coin vector
 PVector cV = new PVector(random(0, 450), random(0, 450));
 // Text vector
-PVector tV = new PVector(400, 50);
+PVector tV = new PVector(25, 50);
 // text title
 //PVector textTitle = new PVector(width/2, height/2);
   
@@ -53,6 +53,11 @@ class Controllers {
       // right motion
       pV.x+=vel+random(0.0, 0.3);
       o.coinScore+=random(0.0, 0.3);
+    }
+    if(keyPressed&&key=='q'){
+      fill(255);
+      text("[Controllers] player movement: " + pV.x + " " + pV.y, width/3.8, height/1.4);
+      text("[Coin] location in the screen" + cV.x + " " + cV.y, width/3.8, height/1.5);
     }
 
   }
