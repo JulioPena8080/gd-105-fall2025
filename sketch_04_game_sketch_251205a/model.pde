@@ -27,8 +27,9 @@ class SaveButton { // use classes to sort code structure //
         
         String name = json.getString("name");
         String type = json.getString("type");
+        String time = json.getString("time"); 
         boolean loaded = false;
-        println("id: " + id + ", score: " + score + ", name: " + name + ", type: " + type);
+        println("id: " + id + ", score: " + score + ", name: " + name + ", type: " + type + ", time: " + time);
         // load data
         json.getInt("id");
         json.getInt("score"); // currently returns the score in display
@@ -38,7 +39,7 @@ class SaveButton { // use classes to sort code structure //
         loaded=true;
         if(loaded){
           fill(175);
-          rect(20, 20, 415, o.bgSqr);
+          rect(20, 20, 215, o.bgSqr-25);
           fill(0);
           // extremly delicate or insert into an array!
           text(" | " + "id " + " : " + json.getInt("id") + " | " + json.getString("type") + " : " + json.getInt("score") + " | " + "time: " + json.getString("time") + " | ", tV.x, tV.y);
@@ -178,11 +179,17 @@ class Setting{
       // save data       
       json.setInt("id", 1);    
       json.setLong("score", o.coinScore);
-      json.setString("type", "saved_Data");
-      json.setString("name", "coin_Spawner"); // User Input Layer
-      json.setString("time", "24_Hours");
+      json.setString("type", "saved");
+      json.setString("name", "spawner"); // User Input Layer
+      json.setString("time", "24 Hours");
+      
+      // load if asked
+      if(keyPressed&&key=='8'){
+        json.getLong("score");
+      }
       
      }
+     
      int scoreLimit = 100500;
      if(o.coinScore==scoreLimit){
        background(30, 30, 200);

@@ -65,7 +65,7 @@ void gameTitle(){
   square(sAV.x*CENTER, sAV.y*CENTER, 100);
   fill(175);
   rect(width/2-15, height/2+25, 175, 85);
-  fill(255);
+  fill(0);
   text("controllers: [a][w][s][d] ", width/2, height/2+35.0);
   text("save game by pressing this key [0]", width/2-12.0, height/2+55.0);
   text("load game by pressing this key [8]", width/2-12.0, height/2+75.0);

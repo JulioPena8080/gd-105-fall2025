@@ -1,6 +1,7 @@
 {
-  "score": 27856960,
-  "name": "coin_Spawner",
+  "score": 4636020,
+  "name": "spawner",
   "id": 1,
-  "type": "saved_Data"
+  "time": "24Hours",
+  "type": "saved"
 }
