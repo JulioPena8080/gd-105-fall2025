@@ -75,7 +75,7 @@ class Coin {
   // turns true when is over or colliding
   boolean hover = playerDistance <= coinRadious;
   // score board variable
-  int coinScore = 0 * frameCount; 
+  long coinScore = 0 * frameCount; 
     // coin value
   int rValue = 10 * frameCount;
   // ensure coins saved
@@ -143,8 +143,7 @@ class Setting{
   Coin o = new Coin();
   Controllers c = new Controllers();
   SaveButton b = new SaveButton();
-  
-  int[] array = {1, 100}; 
+
   boolean collected;
   void scoreBoard(){
       fill(50);
@@ -178,7 +177,7 @@ class Setting{
       
       // save data       
       json.setInt("id", 1);    
-      json.setInt("score", o.coinScore);
+      json.setLong("score", o.coinScore);
       json.setString("type", "saved_Data");
       json.setString("name", "coin_Spawner"); // User Input Layer
       json.setString("time", "24_Hours");
@@ -186,9 +185,9 @@ class Setting{
      }
      int scoreLimit = 100500;
      if(o.coinScore==scoreLimit){
-       background(0, 0, 200);
+       background(30, 30, 200);
        fill(255);    
-       text("You Won", width/2, height/2);
+       text("COMPLETED GOAL 1", width/2, height/2);
      }
    }
   
@@ -196,7 +195,7 @@ class Setting{
     if(frameCount == 10000){
       background(0);
       fill(255);
-      text("10000 frames passed " + " Enjoy the Coin Spawner by Game Structure  ", width/2, height/2);
+      text("10000 frames passed " + " Enjoy the Coin Spawner by Game Structure ", width/2-100, height/2);
     }
     if(frameCount == 11000){
       background(20, 20, 20);
