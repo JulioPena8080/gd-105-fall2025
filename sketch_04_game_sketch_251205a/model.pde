@@ -20,21 +20,30 @@ class SaveButton { // use classes to sort code structure //
   void keyPressed(){
     // load game 
     if(keyPressed&&key=='8'){
-        
+        loadJSONObject("data/saveData.json");
         
         int id = json.getInt("id");
         int score = json.getInt("score");
         
         String name = json.getString("name");
         String type = json.getString("type");
+        boolean loaded = false;
         println("id: " + id + ", score: " + score + ", name: " + name + ", type: " + type);
         // load data
         json.getInt("id");
         json.getInt("score"); // currently returns the score in display
         json.getString("type");
         json.getString("name");
-        loadJSONObject("data/saveData.json");
-      
+        json.getString("time");
+        loaded=true;
+        if(loaded){
+          fill(175);
+          rect(20, 20, 415, o.bgSqr);
+          fill(0);
+          // extremly delicate or insert into an array!
+          text(" | " + "id " + " : " + json.getInt("id") + " | " + json.getString("type") + " : " + json.getInt("score") + " | " + "time: " + json.getString("time") + " | ", tV.x, tV.y);
+        }
+        
     }
     if(keyPressed&&key=='0'){
       saveJSONObject(json, "data/saveData.json");
@@ -163,7 +172,7 @@ class Setting{
       cV.x=random(0, 390); 
       cV.y=random(25, 450);
       scoreBoard();
-      o.roomWall();
+      //o.roomWall();
       b.saveCoins();
       
       // save data       
@@ -171,6 +180,7 @@ class Setting{
       json.setInt("score", o.coinScore);
       json.setString("type", "saved_Data");
       json.setString("name", "coin_Spawner"); // User Input Layer
+      json.setString("time", "24_Hours");
       
      }
      int scoreLimit = 100500;
@@ -188,9 +198,9 @@ class Setting{
       text("Time Out!! " + " Game Over  ", width/2, height/2);
     }
     if(frameCount == 11000){
-      background(55, 10, 0);
+      background(20, 20, 20);
       fill(255);
-      text("You Lost", width/2, height/2);
+      text("[AFK]", width/2, height/2);
     } 
   }   
 }

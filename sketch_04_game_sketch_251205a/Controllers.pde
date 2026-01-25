@@ -59,6 +59,11 @@ class Controllers {
       text("[Controllers] player movement: " + pV.x + " " + pV.y, width/3.8, height/1.4);
       text("[Coin] location in the screen" + cV.x + " " + cV.y, width/3.8, height/1.5);
     }
+    if(keyPressed&&key==' '){
+      background(20, 20, 20);
+      fill(255);
+      text("[AFK]", width/2, height/2);
+    }
 
   }
 }
