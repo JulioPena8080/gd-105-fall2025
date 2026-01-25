@@ -70,6 +70,8 @@ void gameTitle(){
   text("save game by pressing this key [0]", width/2-12.0, height/2+55.0);
   text("load game by pressing this key [8]", width/2-12.0, height/2+75.0);
   text("title screen by pressing this key [y]", width/2-12.0, height/2+95.0);
+  fill(235, 235, 10);
+  text("WARNING: Loading your saved data only works in the title screen", width/2-150, height/2+225);
 }
 // display images in screen 
 void draw(){ 
