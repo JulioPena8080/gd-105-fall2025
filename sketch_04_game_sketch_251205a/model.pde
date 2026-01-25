@@ -144,6 +144,7 @@ class Setting{
   Controllers c = new Controllers();
   SaveButton b = new SaveButton();
   
+  int[] array = {1, 100}; 
   boolean collected;
   void scoreBoard(){
       fill(50);
@@ -195,7 +196,7 @@ class Setting{
     if(frameCount == 10000){
       background(0);
       fill(255);
-      text("Time Out!! " + " Game Over  ", width/2, height/2);
+      text("10000 frames passed " + " Enjoy the Coin Spawner by Game Structure  ", width/2, height/2);
     }
     if(frameCount == 11000){
       background(20, 20, 20);

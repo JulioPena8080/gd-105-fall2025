@@ -64,6 +64,9 @@ class Controllers {
       fill(255);
       text("[AFK]", width/2, height/2);
     }
+    if(keyPressed&&key==ESC){
+      exit(); 
+    }
 
   }
 }

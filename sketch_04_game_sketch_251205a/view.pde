@@ -56,7 +56,7 @@ void gameModel(){
 //  square Axis Vector
 PVector sAV = new PVector(width/2, height/2); 
 void gameTitle(){ 
-  
+  background(0);
   text(" Coin Spawer ", width/2, height/2-50);
   text(" reach 100000 coins", width/2-100, height/2+20);
   fill(random(150, 210), random(150, 210), random(150, 210));
@@ -69,9 +69,14 @@ void gameTitle(){
   text("controllers: [a][w][s][d] ", width/2, height/2+35.0);
   text("save game by pressing this key [0]", width/2-12.0, height/2+55.0);
   text("load game by pressing this key [8]", width/2-12.0, height/2+75.0);
+  text("title screen by pressing this key [y]", width/2-12.0, height/2+95.0);
 }
 // display images in screen 
 void draw(){ 
   gameModel(); 
+  if(keyPressed&&key=='y'){
+     gameTitle();
+  }
+  
   
 } 
