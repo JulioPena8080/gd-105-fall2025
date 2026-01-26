@@ -63,15 +63,16 @@ void gameTitle(){
   square(sAV.x, sAV.y, 100);
   fill(random(150, 210), random(150, 210), random(150, 210));
   square(sAV.x*CENTER, sAV.y*CENTER, 100);
-  fill(175);
+  fill(medianLight);
   rect(width/2-15, height/2+25, 175, 85);
   fill(0);
   text("controllers: [a][w][s][d] ", width/2, height/2+35.0);
-  text("save game by pressing this key [0]", width/2-12.0, height/2+55.0);
-  text("load game by pressing this key [8]", width/2-12.0, height/2+75.0);
-  text("title screen by pressing this key [y]", width/2-12.0, height/2+95.0);
+  text("save game by pressing [0]", width/2-2.0, height/2+55.0);
+  text("load game by pressing [8]", width/2-2.0, height/2+75.0);
+  text("title screen by pressing [y]", width/2-2.0, height/2+95.0);
+  text("AFK MODE by pressing [ ]", width/2-2.0, height/2+108.0);
   fill(235, 235, 10);
-  text("WARNING: Loading your saved data only works in the title screen", width/2-150, height/2+225);
+  text("WARNING: Loading your saved data only works in the title screen",  width/2-150, height/2+225);
 }
 // display images in screen 
 void draw(){ 
@@ -79,6 +80,5 @@ void draw(){
   if(keyPressed&&key=='y'){
      gameTitle();
   }
-  
   
 } 

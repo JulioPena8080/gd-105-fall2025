@@ -1,3 +1,6 @@
+// timer
+float runtime = frameCount;
+
 // game properies
 PVector bV = new PVector(340, 25);
 
@@ -146,6 +149,13 @@ class Setting{
   SaveButton b = new SaveButton();
 
   boolean collected;
+  void framesDisplay(){ 
+    fill(medianLight);
+    rect(width/2+1, height/2+15, 175, 20);
+    println("frames: " + frameCount);
+    fill(0);
+    text("frames:  " + frameCount, width/2+5, height/2+30);
+  }
   void scoreBoard(){
       fill(50);
       rect(20, 20, 415, o.bgSqr);
@@ -158,9 +168,19 @@ class Setting{
         
       }
   }
-  
+  void playerAbility(){
+    // ability to increase coins times power up
+    float powerup = 100;
+    boolean activePower = false;
+    powerup*=3;
+    if(frameCount>=15000){
+      activePower=true;        
+    }
+    if(o.hover&&activePower==true){
+      o.coinScore*=powerup;
+    }
+  }
   void hover(){ 
-    
     // press 'm' to collect the coin 
     if(o.hover){
 
@@ -183,9 +203,10 @@ class Setting{
       json.setString("name", "spawner"); // User Input Layer
       json.setString("time", "24 Hours");
       
-      // load if asked
+      // loads json saved data
       if(keyPressed&&key=='8'){
         json.getLong("score");
+        
       }
       
      }

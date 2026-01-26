@@ -30,9 +30,14 @@ class Controllers {
       pV.y+=vel;
     }
   }
+
   void playerControl(){
-    // keys
- 
+    
+    // allowcating 
+    Setting s = new Setting();
+    if(keyPressed&&key=='m'){
+      s.playerAbility();
+    }
     // depending on the pressed key player will move 
     if(keyPressed&&key=='w'){
       // up motion
@@ -63,6 +68,7 @@ class Controllers {
       background(20, 20, 20);
       fill(255);
       text("[AFK]", width/2, height/2);
+      s.framesDisplay();
     }
     if(keyPressed&&key==ESC){
       exit(); 
