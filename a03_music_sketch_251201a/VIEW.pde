@@ -1,13 +1,7 @@
-    // declare oscillator square
-    //SqrOsc square;
-    // declare filters for oscillator
-    //AllPass allpass;
-// speed for each instant
-
 
 // Active canvas for display
 void draw(){
-
+    //oscillator o = new oscillator();
     
     // scales the entire canvas
     scaleProject();
@@ -29,26 +23,26 @@ void draw(){
     // called a custom funtion that does exactly this demands 
     
     // display all lines of shapes with their colors
-    displayBroadcast(broadcastSnare, 0, #00aa00);
-    displayBroadcast(broadcastKick, 1, #aa0000);
-    displayBroadcast(broadcastHihat, 2, #0000aa);
-    displayBroadcast(broadcastBass, 3, #ffee00);
+    displayBroadcast(broadcastSawOsc, 0, #00aa00);
+    displayBroadcast(broadcastSqrOsc, 1, #aa0000);
+    displayBroadcast(broadcastSinOsc, 2, #0000aa);
+    displayBroadcast(broadcastTriOsc, 3, #ffee00);
     
     // play initialized sound
-    if(broadcastSnare[instant]){
+    if(broadcastSawOsc[instant]){
       // snare  
-      drumKitSnare.play();
+      saw.play();
     }
-    if(broadcastKick[instant]){
+    if(broadcastSqrOsc[instant]){
       // kick
-      drumKitKick.play();
+      square.play();
     }
-    if(broadcastHihat[instant]){
+    if(broadcastSinOsc[instant]){
       // hihat
-      drumKitHihat.play();
+      sine.play();
     }
-    if(broadcastBass[instant]){
-      drumKitBass.play();
+    if(broadcastTriOsc[instant]){
+      triangle.play();
     }
     // increment to analyze
     instant++;
@@ -63,16 +57,16 @@ void randomPattern(){
   // use switch for each case
   switch(rLine){
     case 0:
-      broadcastSnare[rInstant] = !broadcastSnare[rInstant];
+      broadcastSawOsc[rInstant] = !broadcastSawOsc[rInstant];
       break;
     case 1:
-      broadcastKick[rInstant] = !broadcastKick[rInstant];
+      broadcastSqrOsc[rInstant] = !broadcastSqrOsc[rInstant];
       break;
     case 2:
-      broadcastHihat[rInstant] = !broadcastHihat[rInstant];
+      broadcastSinOsc[rInstant] = !broadcastSinOsc[rInstant];
       break;
     case 3:
-      broadcastBass[rInstant] = !broadcastBass[rInstant];
+      broadcastTriOsc[rInstant] = !broadcastTriOsc[rInstant];
       break;
   }
   

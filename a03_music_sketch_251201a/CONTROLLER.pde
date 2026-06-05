@@ -1,13 +1,27 @@
+
+float volume = 0.2; // needs amplifier
+
 // mute the sound by pressing any key
 void keyPressed(){
+  
   // condination that returns the mute method
   if(key=='r'){
     if (instant == 0){
       randomPattern();
     }
   }
+  // mute the sounds
   if(key==' '){
     mute();
+  }
+  // needs a amplifier
+  // increases volume 
+  if(keyPressed&&key=='1'){
+    volume+=0.1;
+  }
+  // decreases volume
+  if(keyPressed&&key=='0'){
+    volume-=0.1;
   }
 }
 
@@ -19,16 +33,16 @@ void mouseClicked(){
  
   switch(line){
     case 0:
-      broadcastSnare[instant] = !broadcastSnare[instant];
+      broadcastSawOsc[instant] = !broadcastSawOsc[instant];
       break;
     case 1:
-      broadcastKick[instant] = !broadcastKick[instant];
+      broadcastSqrOsc[instant] = !broadcastSqrOsc[instant];
       break;
     case 2:
-      broadcastHihat[instant] = !broadcastHihat[instant];
+      broadcastSinOsc[instant] = !broadcastSinOsc[instant];
       break;
     case 3:
-      broadcastBass[instant] = !broadcastBass[instant];
+      broadcastTriOsc[instant] = !broadcastTriOsc[instant];
       break;
   }
 }
