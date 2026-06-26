@@ -17,6 +17,7 @@ void originalColor(){
 // bool data type for mouse clicked
 boolean mouseClicked = false;
 void radiousStroke(){
+  
   noFill();
   stroke(color(255));
   circle(width/2, height/2, radious);

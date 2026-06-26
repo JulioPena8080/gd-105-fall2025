@@ -35,6 +35,9 @@ color backgroundColor = color(64, 128, 128);
 // name of the color for the row of shapes
 color blackShape = color(55, 55, 55);
 
+
+
+
 // Entry point of the program
 void setup(){
     // called the pre-build function 'frameRate' at 8 along with the limitation 
@@ -101,6 +104,7 @@ void displayBroadcast(boolean[] iteration, int line, color blackShape){
 }
 // mute the sounds
 void mute(){ 
+  
   saw.stop();
   square.stop();
   sine.stop();

@@ -1,10 +1,19 @@
 
-float volume = 0.2; // needs amplifier
+float volume; // needs amplifier
+float amp;
 
-// mute the sound by pressing any key
-void keyPressed(){
+void amp(){
+    // increases volume 
+  if(keyPressed&&key=='1'){
+    amp += 10.2;
+  }
   
-  // condination that returns the mute method
+    // decreases volume
+  if(keyPressed&&key=='0'){
+    amp-=15.4;
+  }
+  
+    // condination that returns the mute method
   if(key=='r'){
     if (instant == 0){
       randomPattern();
@@ -14,15 +23,10 @@ void keyPressed(){
   if(key==' '){
     mute();
   }
-  // needs a amplifier
-  // increases volume 
-  if(keyPressed&&key=='1'){
-    volume+=0.1;
-  }
-  // decreases volume
-  if(keyPressed&&key=='0'){
-    volume-=0.1;
-  }
+}
+// mute the sound by pressing any key
+void keyPressed(){
+  amp();
 }
 
 

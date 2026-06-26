@@ -1,8 +1,6 @@
 
 // Active canvas for display
 void draw(){
-    //oscillator o = new oscillator();
-    
     // scales the entire canvas
     scaleProject();
 
