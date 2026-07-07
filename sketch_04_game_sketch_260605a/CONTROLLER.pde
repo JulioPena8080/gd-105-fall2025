@@ -20,7 +20,7 @@ void mousePressed(int coinCreditInt){
 }
 
 void mouseReleased(int coinCreditInt){
-  boolean released = false;
+  boolean released = true;
   
   if(released==true){
     coinCreditInt+=5;
