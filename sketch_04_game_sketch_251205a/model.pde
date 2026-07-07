@@ -164,7 +164,7 @@ class Setting{
       if(keyPressed&&key=='8'){
         // only works for console not for display
         rect(20, 20, 415, o.bgSqr);
-        text("coins: " + o.coinScore, tV.x, tV.y); // gets Int convert into a string
+        text("coins: " + o.coinScore, tV.x, tV.y); // gets 'o.coinScore' Int 
         
       }
   }
@@ -180,6 +180,23 @@ class Setting{
       o.coinScore*=powerup;
     }
   }
+  // creating the save function 
+  void saveFunction(){
+      // save data       
+      json.setInt("id", 1);    
+      json.setLong("score", o.coinScore);
+      json.setString("type", "saved");
+      json.setString("name", "spawner"); // User Input Layer
+      json.setString("time", "24 Hours");
+  }
+  
+  // creating the load function
+  void loadFunction(){
+    // fix bug & load savad data
+    json.getInt("score");
+    
+  }
+  
   void hover(){ 
     // press 'm' to collect the coin 
     if(o.hover){
@@ -195,18 +212,12 @@ class Setting{
       scoreBoard();
       //o.roomWall();
       b.saveCoins();
+      // saves the current values into a json file
       
-      // save data       
-      json.setInt("id", 1);    
-      json.setLong("score", o.coinScore);
-      json.setString("type", "saved");
-      json.setString("name", "spawner"); // User Input Layer
-      json.setString("time", "24 Hours");
+      // loads json saved data & fix the main bug pf the game
       
-      // loads json saved data
       if(keyPressed&&key=='8'){
-        json.getLong("score");
-        
+        loadFunction();       // FIXED BUG FOR LOADING SCORE INSIDE GAME 
       }
       
      }

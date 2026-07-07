@@ -5,3 +5,4 @@ arc(x, y, d, d, 0, QUARTER_PI);
 arc(x, y, d-20, d-20, 0, HALF_PI);
 arc(x, y, d-40, d-40, 0, PI);
 arc(x, y, d-60, d-60, 0, TAU);
+println("| default 1: width " + width, "| default 2 : TAU " + TAU, "| default 3 : PI " + PI);

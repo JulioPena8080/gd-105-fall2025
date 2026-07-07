@@ -11,7 +11,6 @@ void setup(){
   setupMethodForClasses();
 }
 
-
 // custom function for the draw method 
 void drawMethodForClasses(){
   // allocate class

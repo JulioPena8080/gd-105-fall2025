@@ -11,10 +11,10 @@ void setup(){
   // saveJSONObject(json, "data/new.json");
   // [STORE IN: MODEL] 
   // ======================================= //
-  //syntax; to remind my self to create a save function
-  //that can save game's state by pressing a button
+  // syntax; to remind my self to create a save function
+  // that can save game's state by pressing a button
   
-  //saveJSONObject(json, filename);
+  // saveJSONObject(json, filename);
   
   // load images
   
