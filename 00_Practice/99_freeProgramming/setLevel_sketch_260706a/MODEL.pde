@@ -1,22 +1,16 @@
 // create a class for the level
 class level{
 
-    // create translation
+    // create translation for level
     void translation(){
       float x = width/2-30;
       float y = height/2-50;
       translate(x, y);
     }
-
-    // create level
+    // create level variables 
     void levelProperties(){
       // model of the level
-      float threshold = 250;
-      // offset limit
-      //float offset = ;
-      // speed of motion
-      float velocity = 0.5;
- 
+      float threshold = 140;
       // level axis coordinates in canvas 
       PVector rect = new PVector(0, 0);
       // dimesion of level
@@ -24,34 +18,48 @@ class level{
       float tall_background = 140;
       float big = 50;
       float tall = 140;
-      float inRange = random(0, 335);
-      if(mousePressed){
+      // create colors for the level
+      color darkGreen = color(10, 100, 10);
+      color white = 255;
+      color green = color(25, 175, 95);
+      // create an area for the level functionalities
+      boolean offset = false;
+      // conditions for level
+      if(mouseY<=201){
+        offset=true;
+      }
+      if(mousePressed&&offset==true){
         tall-=mouseY;
-        text("This is mouse Y coordinate: " + mouseY, rect.x+10, rect.y+25);
+        fill(white);
+        textSize(25);
+        text("This is mouse X coordinate: " + mouseX, rect.x+10, rect.y+25);
+        text("This is mouse Y coordinate: " + mouseY, rect.x+10, rect.y+75);
       }
       // from top to bottom
-      if(mouseY>140){
-        tall=140;
+      if(mouseY>threshold){
+        tall=threshold;
       }
-      //bottom to top
+      // bottom to top
       if(mouseY>335){
-          tall=140;
+          tall=threshold;
       }
       // in the middle 
       if(mouseY<=0){
-        tall=140;
+        tall=threshold;
       }
       // moves origin to the center
       translation();
-      // scale(0.5);
+      scale(1.5);
       // create a layer of background
       // level background
-      fill(125);
-      rect(rect.x, rect.y, big_background, tall_background);
+      fill(darkGreen);
+      rect(rect.x-15, rect.y, big_background, tall_background);
       // rectangle for the level
-      fill(225);
-      rect(rect.x, rect.y, big, tall);
-
+      fill(green);
+      rect(rect.x-15, rect.y, big, tall);
+      // creates line for the offset  
+      stroke(255);
+      line(rect.x-250, rect.y, width, rect.y);
     }
 
 }
