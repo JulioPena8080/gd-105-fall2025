@@ -1,0 +1,20 @@
+Realms & Wizards - The Awaken Dragons 
+
+==================================================
+
+PLAYER 1 CONTROLLES: [ Z, X ]
+	
+Functionality - Z = move left, X = return to land
+
+==================================================
+
+PLAYER 2 CONTROLLERS: [ N, M ]
+
+Functionality - N = move right, M = return to land
+
+==================================================
+
+EXTRA CONTROLLER FOR THE STONE DOOR [ 0 ] & [ 1 ]
+
+Functionality - Open & Close Door 
+
