@@ -24,12 +24,22 @@ class level{
       float tall_background = 140;
       float big = 50;
       float tall = 140;
+      float inRange = random(0, 335);
       if(mousePressed){
         tall-=mouseY;
         text("This is mouse Y coordinate: " + mouseY, rect.x+10, rect.y+25);
       }
+      // from top to bottom
+      if(mouseY>140){
+        tall=140;
+      }
+      //bottom to top
       if(mouseY>335){
-          tall=
+          tall=140;
+      }
+      // in the middle 
+      if(mouseY<=0){
+        tall=140;
       }
       // moves origin to the center
       translation();
