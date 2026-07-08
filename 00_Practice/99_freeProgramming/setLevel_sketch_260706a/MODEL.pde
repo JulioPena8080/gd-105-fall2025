@@ -1,6 +1,12 @@
 // create a class for the level
-class level{
-
+class levelClass {
+    // create instructions 
+    void levelGuide(){
+      String guide = " Click & Drag ";
+      fill(95);
+      textSize(35);
+      text(guide, 295, 125);
+    }
     // create translation for level
     void translation(){
       float x = width/2-30;
@@ -24,6 +30,9 @@ class level{
       color green = color(25, 175, 95);
       // create an area for the level functionalities
       boolean offset = false;
+      // set of string to display 
+      String x = "This is mouse X coordinates: ";
+      String y = "This is mouse Y coordinates: ";
       // conditions for level
       if(mouseY<=201){
         offset=true;
@@ -32,8 +41,8 @@ class level{
         tall-=mouseY;
         fill(white);
         textSize(25);
-        text("This is mouse X coordinate: " + mouseX, rect.x+10, rect.y+25);
-        text("This is mouse Y coordinate: " + mouseY, rect.x+10, rect.y+75);
+        text(x + mouseX, rect.x+10, rect.y+25);
+        text(y + mouseY, rect.x+10, rect.y+75);
       }
       // from top to bottom
       if(mouseY>threshold){
@@ -47,8 +56,11 @@ class level{
       if(mouseY<=0){
         tall=threshold;
       }
+      // display the level guide 
+      levelGuide();
       // moves origin to the center
       translation();
+      // extends the image 
       scale(1.5);
       // create a layer of background
       // level background
@@ -58,8 +70,7 @@ class level{
       fill(green);
       rect(rect.x-15, rect.y, big, tall);
       // creates line for the offset  
-      stroke(255);
-      line(rect.x-250, rect.y, width, rect.y);
+      stroke(175);
+      line(rect.x-250, rect.y, width, rect.y); 
     }
-
 }
