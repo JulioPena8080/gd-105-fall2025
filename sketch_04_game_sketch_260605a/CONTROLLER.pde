@@ -5,24 +5,6 @@
 //        // any case modified
 //    }
 //  }
-void keyPressed(){
+class controllers {
   
-}
-
-void mousePressed(int coinCreditInt){
-  int clicked = 0;
-  for(int i=0; i<clicked; i++){
-    coinCreditInt++;
-    if(coinCreditInt>clicked){
-      println("more coins than clicks");
-    }
-  }
-}
-
-void mouseReleased(int coinCreditInt){
-  boolean released = true;
-  
-  if(released==true){
-    coinCreditInt+=5;
-  }
 }

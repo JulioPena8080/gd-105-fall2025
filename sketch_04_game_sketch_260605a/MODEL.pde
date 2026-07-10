@@ -28,12 +28,32 @@ class titleScreenClass { // Init start
     text(title, W, H);
     
   }
+    // coin credit text, color and statements 
+  boolean inserted;
+  // hover over the intake slot 
+  void coinCredit(int coinCreditInt){
+    
+    // credit method
+    color textColor = color(225, 128, 0);
+    // text for the credits
+    String coinText = "Credits";
+    // whether is true or not
+    boolean coinInserted = false;
+    coinCreditInt=1;
+    // color and text of credits 
+    fill(textColor);
+    text(coinText, 50, height-50);
+    // credit coin color and text
+    fill(225);
+    text(coinCreditInt, 125, height-50);
+    
+  }
 
   // declared vector for intake slot
   PVector intakeSlotVector;
   Boolean clicked;
   // shape for intake slot
-  void intakeSlot(){
+  void intakeSlot(int coinCreditInt){
     color textColor = color(225, 128, 0);
     // text for intakeSlot
     String intakeSlotText = "Insert Coin";
@@ -61,6 +81,7 @@ class titleScreenClass { // Init start
     // text and color for slot 
     fill(textColor);
     text(intakeSlotText, textLocationX, textLocationY);
+    
     // condition if mouse is hovering slot
     float mousePositionX = mouseX;
     float mousePositionY = mouseY;
@@ -75,46 +96,8 @@ class titleScreenClass { // Init start
       fill(65);
       rect(widthX, heightY, widthLength-45, heightLength-35);
       coinAnimation(widthLength);
-      
+      coinCredit(coinCreditInt);
     }
-
-  }
-  
-  // coin credit text, color and statements 
-  boolean inserted;
-  // hover over the intake slot 
-  void coinCredit(int coinCreditInt){
-    
-    // credit method
-    color textColor = color(225, 128, 0);
-    // text for the credits
-    String coinText = "Credits";
-    //int limitCoin = 50;
-    boolean coinInserted = false;
-    // checks if it has been inserted and incremented 
-    
-    // warning still needs work //
-    if(!mousePressed){
-      coinCreditInt++;
-    } 
-    if(!mousePressed){
-      coinCreditInt+=1;
-      coinInserted=true;
-    }
-    if(coinInserted==true){
-      coinCreditInt+=5;
-    }
-    if(keyPressed&&key==' '){
-      coinCreditInt+=1;
-    }
-    // code above under construction //
-    
-    // color and text of credits 
-    fill(textColor);
-    text(coinText, 50, height-50);
-    // credit coin color and text
-    fill(225);
-    text(coinCreditInt, 125, height-50);
 
   }
   
@@ -128,9 +111,10 @@ class titleScreenClass { // Init start
     titleShapes();
     titleText();
     // coin slot
-    intakeSlot();
+    intakeSlot(coinCreditInt);
     // check if credit is inserted
-    coinCredit(coinCreditInt);
+    //coinCredit(coinCreditInt);
+    
   }
 }
 

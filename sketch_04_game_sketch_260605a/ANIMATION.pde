@@ -9,7 +9,7 @@ void coinAnimation(float widthLength){
   //titleScreenClass t = new titleScreenClass();
   int coinSize = 65;
   // condition for mouse click and pressing the 'space' key
-  if(mousePressed||keyPressed&&key==' '){
+  if(mousePressed){
     coinVector.x+=17.5;
   } 
 
